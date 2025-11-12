@@ -1,174 +1,103 @@
 <template>
-  <div class="flex flex-col h-screen bg-[#0f1218] text-gray-200">
-    <!-- ===== Top Bar ===== -->
-    <header class="h-16 flex items-center px-6 border-b border-white/10 bg-[#111520] relative flex-shrink-0">
-      <div class="flex items-center gap-3">
-        <img src="/logo/dataLibrary.png" alt="logo" class="h-[120px] w-[120px] object-contain" />
-      </div>
-
-      <div class="ml-auto flex items-center gap-6 text-sm relative">
-        <!-- Admin -->
-        <div class="relative group">
-          <div
-            class="admin-container flex items-center gap-2 cursor-pointer px-3 py-1 rounded-full transition-all duration-300"
-            @click="toggleLogout"
-          >
-            <!-- ✅ Ultra-thin ring + slightly stronger glow -->
-            <div
-              class="admin-ring w-10 h-10 rounded-full flex items-center justify-center border border-white transition-all duration-300 group-hover:ring-[0.8px] group-hover:ring-white/90 group-hover:shadow-[0_0_12px_rgba(255,255,255,0.55)]"
-            >
-              <img src="/icon/admin.png" class="w-5 h-5 object-contain icon-invert" />
-            </div>
-            <span class="opacity-80 text-sm font-medium">Administrator</span>
-          </div>
-
-          <div
-            v-if="showLogout"
-            class="absolute right-0 mt-2 w-32 bg-[#1a1f2f] border border-white/10 rounded-md shadow-lg z-50"
-          >
-            <button @click="logout" class="w-full text-left px-4 py-2 text-sm hover:bg-white/10">Log Out</button>
-          </div>
-        </div>
-
-        <!-- Toolbar -->
-        <div class="flex items-center gap-4">
-          <button class="icon-btn"><img src="/icon/notification.png" class="w-5 h-5 icon-invert" /></button>
-          <button class="icon-btn"><img src="/icon/alerts.png" class="w-5 h-5 icon-invert" /></button>
-          <button class="icon-btn"><img src="/icon/application.png" class="w-5 h-5 icon-invert" /></button>
-
-          <!-- Hide/Unhide Titles Button -->
-          <button class="arrow-btn" @click="showTitles = !showTitles" :title="showTitles ? 'Hide titles' : 'Show titles'">
-            <img src="/icon/arrow-down.png" class="w-5 h-5 icon-invert transition-transform duration-300" :class="{ 'rotate-180': showTitles }" />
-          </button>
-
-          <button class="icon-btn" @click="enterFullscreen">
-            <img src="/icon/maximize.png" class="w-5 h-5 icon-invert" />
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- ===== Navigation Bar ===== -->
-    <nav
-      v-if="showTitles"
-      class="h-12 flex items-center justify-center bg-[#121725] border-b border-white/10 px-6 space-x-8 text-sm flex-shrink-0"
+  <!-- Main Background -->
+    <main
+    class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden
+            bg-gradient-to-br from-[#001510] via-[#00321d] to-[#00a86b]"
     >
-      <button
-        v-for="s in sections"
-        :key="s"
-        @click="activeSection = s"
-        class="px-2 py-1 transition"
-        :class="activeSection === s 
-          ? 'text-blue-400 border-b-2 border-blue-400 font-semibold' 
-          : 'hover:text-blue-300 text-gray-300'"
-      >
-        {{ s }}
-      </button>
-    </nav>
-
-    <!-- ✨ Thinner White Glow Line When Hidden -->
-    <div v-else class="h-[3px] relative w-full overflow-hidden bg-transparent">
-      <div class="glow-line"></div>
+  <!-- 💡 Radial Glow -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,150,0.15)_0%,transparent_70%)] pointer-events-none animate-pulse-slow"
+  ></div>
+    <!-- Header -->
+    <div class="flex items-center gap-3 absolute top-8 right-8">
+      <div
+        class="w-4 h-4 rounded-full shadow-lg transition-all duration-500"
+        :class="connected
+          ? 'bg-green-500 shadow-[0_0_12px_rgba(16,255,100,0.9)]'
+          : 'bg-red-500 shadow-[0_0_12px_rgba(255,80,80,0.9)]'"
+      ></div>
+      <span class="text-sm font-medium tracking-wide">
+        {{ connected ? 'API Connected' : 'API Disconnected' }}
+      </span>
     </div>
 
-    <!-- ===== Scrollable Content ===== -->
-    <div class="flex-1 overflow-y-auto scroll-smooth transition-all duration-300 px-2 pb-6">
-      <CustomizeDashboard v-if="activeSection === 'Dashboard'" />
-      <div v-else class="h-full flex items-center justify-center text-gray-500 text-sm py-10">
-        {{ activeSection }} page content here...
-      </div>
-    </div>
-  </div>
+    <!-- Title -->
+    <h1 class="text-4xl font-bold drop-shadow-lg">EcoSense</h1>
+
+    <!-- Data -->
+    <p
+      class="text-xl font-medium transition-all duration-300"
+      :class="loading ? 'opacity-70' : 'opacity-100'"
+    >
+      {{ data }}
+    </p>
+
+    <!-- Get Data Button -->
+    <button
+      @click="getData"
+      class="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-sky-400
+             text-gray-900 font-semibold
+             shadow-[0_0_15px_rgba(0,150,255,0.5)] hover:scale-105
+             hover:shadow-[0_0_25px_rgba(0,200,255,0.8)]
+             transition-all duration-300 disabled:opacity-50"
+      :disabled="loading"
+    >
+      {{ loading ? 'Requesting data...' : 'Get Hello World' }}
+    </button>
+  </main>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import CustomizeDashboard from './CustomizeDashboard.vue'
+import { ref, onMounted } from 'vue'
 
-const router = useRouter()
-const sections = ['Dashboard', 'Record', 'Configuration', 'System', 'Operations']
-const activeSection = ref('Dashboard')
-const showTitles = ref(true)
-const showLogout = ref(false)
+// ✅ Your ESP32 IP
+const ESP32IP = 'http://192.168.1.32/hello'
 
-function toggleLogout() { showLogout.value = !showLogout.value }
-function logout() { router.push('/login-user') }
-async function enterFullscreen() { if (!document.fullscreenElement) await document.documentElement.requestFullscreen() }
+// Reactive variables
+const data = ref('Click the button to receive data')
+const loading = ref(false)
+const connected = ref(false)
+
+// Function to fetch ESP32 data
+const getData = async () => {
+  loading.value = true
+  data.value = 'Connecting...'
+
+  try {
+    const res = await fetch(ESP32IP)
+    if (!res.ok) throw new Error('HTTP Error')
+
+    const text = await res.text()
+    data.value = text
+    connected.value = true
+  } catch (err) {
+    data.value = '⚠️ Failed to connect to ESP32'
+    connected.value = false
+  } finally {
+    loading.value = false
+  }
+}
+
+// Auto run on page load
+onMounted(() => {
+  getData()
+})
 </script>
 
 <style scoped>
-.icon-btn { @apply w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition; }
-.icon-invert { filter: invert(1) brightness(2); }
-.arrow-btn { @apply w-9 h-9 flex items-center justify-center rounded-full transition; background: rgba(255,255,255,0.05); }
-.arrow-btn:hover { background: rgba(255,255,255,0.15); }
-.arrow-btn img { transition: transform 0.3s ease; }
-
-/* ✨ Thin glowing white line when nav is hidden */
-.glow-line {
-  position: absolute;
-  width: 200%;
-  height: 2px;
-  left: -100%;
-  top: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.75),
-    transparent
-  );
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
-  animation: glowTravel 3s ease-in-out infinite;
+.main-bg {
+  background-image: 
+    linear-gradient(to bottom right, #000000, #0f2f1b, #1b5e20),
+    linear-gradient(to top right, rgba(0,255,150,0.3), rgba(50,255,150,0.15));
+  background-blend-mode: overlay;
 }
 
-@keyframes glowTravel {
-  0% { left: -100%; opacity: 0.25; }
-  25% { left: 20%; opacity: 0.9; }
-  50% { left: 60%; opacity: 0.7; }
-  75% { left: 20%; opacity: 0.9; }
-  100% { left: -100%; opacity: 0.25; }
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
-/* Remove fade transitions */
-nav,
-.glow-line {
-  transition: none !important;
-}
-</style>
-
-<style>
-/* 🌐 Modern Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(59,130,246,0.6), rgba(59,130,246,0.3));
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(59,130,246,0.4);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(59,130,246,0.9), rgba(59,130,246,0.5));
-  box-shadow: 0 0 12px rgba(59,130,246,0.6);
-}
-
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(59,130,246,0.6) transparent;
-}
-
-html {
-  scroll-behavior: smooth;
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
 }
 </style>
