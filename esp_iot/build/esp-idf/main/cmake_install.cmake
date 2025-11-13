@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/main
+# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

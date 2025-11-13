@@ -1,0 +1,381 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\wifi_station.elf C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+cs0_drv:0x00        Usage          Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              Wi�ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 12 2025 20:49:53[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1a8cch (108748) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0002a8f4 vaddr=3ffb0000 size=03f0ch ( 16140) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0002e808 vaddr=40080000 size=01810h (  6160) load[0m
+[0;32mI (134) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=83444h (537668) map[0m
+[0;32mI (320) esp_image: segment 4: paddr=000b346c vaddr=40081810 size=16724h ( 91940) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c9b98 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (368) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (368) boot: Disabling RNG early entropy source...[0m
+[0;32mI (379) cpu_start: Multicore app[0m
+[0;32mI (387) cpu_start: Pro cpu start user code[0m
+[0;32mI (387) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (387) app_init: Application information:[0m
+[0;32mI (387) app_init: Project name:     wifi_station[0m
+[0;32mI (392) app_init: App version:      v5.5.1[0m
+[0;32mI (395) app_init: Compile time:     Nov 12 2025 21:01:32[0m
+[0;32mI (400) app_init: ELF file SHA256:  da3538a6f...[0m
+[0;32mI (405) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (409) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (412) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (416) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (421) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (427) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (432) heap_init: At 3FFB7F80 len 00028080 (160 KiB): DRAM[0m
+[0;32mI (437) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (442) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (448) heap_init: At 40097F34 len 000080CC (32 KiB): IRAM[0m
+[0;32mI (455) spi_flash: detected chip: generic[0m
+[0;32mI (457) spi_flash: flash io: dio[0m
+[0;33mW (460) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (473) main_task: Started on CPU0[0m
+[0;32mI (483) main_task: Calling app_main()[0m
+[0;32mI (503) wifi station: ESP_WIFI_MODE_STA[0m
+[0;32mI (523) wifi:wifi driver task: 3ffbff7c, prio:23, stack:6656, core=0[0m
+[0;32mI (533) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (533) wifi:wifi certification version: v7.0[0m
+[0;32mI (533) wifi:config NVS flash: enabled[0m
+[0;32mI (533) wifi:config nano formatting: disabled[0m
+[0;32mI (543) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (543) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (553) wifi:Init management short buffer num: 32[0m
+[0;32mI (553) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (563) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (563) wifi:Init static rx buffer num: 10[0m
+[0;32mI (563) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (573) wifi_init: rx ba win: 6[0m
+[0;32mI (573) wifi_init: accept mbox: 6[0m
+[0;32mI (573) wifi_init: tcpip mbox: 32[0m
+[0;32mI (583) wifi_init: udp mbox: 6[0m
+[0;32mI (583) wifi_init: tcp mbox: 6[0m
+[0;32mI (583) wifi_init: tcp tx win: 5760[0m
+[0;32mI (583) wifi_init: tcp rx win: 5760[0m
+[0;32mI (593) wifi_init: tcp mss: 1440[0m
+[0;32mI (593) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (593) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (603) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (683) wifi:mode : sta (b0:a7:32:dd:72:60)[0m
+[0;32mI (683) wifi:enable tsf[0m
+[0;32mI (683) wifi station: wifi_init_sta finished.[0m
+[0;32mI (703) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:6, snd_ch_cfg:0x0[0m
+[0;32mI (703) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (723) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (733) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (763) wifi:connected with Salam_Maxis_2.4G, aid = 22, channel 5, BW20, bssid = 84:01:12:36:8a:04[0m
+[0;32mI (773) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (773) wifi:pm start, type: 1[0m
+
+[0;32mI (773) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (783) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (823) wifi:<ba-add>idx:0 (ifx:0, 84:01:12:36:8a:04), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1843) esp_netif_handlers: sta ip: 192.168.1.32, mask: 255.255.255.0, gw: 192.168.1.254[0m
+[0;32mI (1843) wifi station: got ip:192.168.1.32[0m
+[0;32mI (1843) wifi station: connected to ap SSID:Salam_Maxis_2.4G password:0176182802[0m
+[0;32mI (1843) http_server: Starting HTTP server on port 80[0m
+[1;31mE (1883) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (1883) DHT11: Failed to read data[0m
+[0;32mI (1883) main_task: Returned from app_main()[0m
+[0;32mI (4213) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (6903) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (6903) DHT11: Failed to read data[0m
+[1;31mE (11923) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (11923) DHT11: Failed to read data[0m
+[1;31mE (16943) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (16943) DHT11: Failed to read data[0m
+[1;31mE (21963) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (21963) DHT11: Failed to read data[0m
+[1;31mE (26983) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (26983) DHT11: Failed to read data[0m
+[1;31mE (32003) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (32003) DHT11: Failed to read data[0m
+[1;31mE (37023) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (37023) DHT11: Failed to read data[0m
+[1;31mE (42043) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (42043) DHT11: Failed to read data[0m
+[1;31mE (47063) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (47063) DHT11: Failed to read data[0m
+[1;31mE (52083) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (52083) DHT11: Failed to read data[0m
+[0;32mI (57033) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (57103) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (57103) DHT11: Failed to read data[0m
+[1;31mE (62123) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (62123) DHT11: Failed to read data[0m
+[1;31mE (67143) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (67143) DHT11: Failed to read data[0m
+[1;31mE (72163) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (72163) DHT11: Failed to read data[0m
+[1;31mE (77183) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (77183) DHT11: Failed to read data[0m
+[1;31mE (82203) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (82203) DHT11: Failed to read data[0m
+[1;31mE (87223) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (87223) DHT11: Failed to read data[0m
+[1;31mE (92243) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (92243) DHT11: Failed to read data[0m
+[1;31mE (97263) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (97263) DHT11: Failed to read data[0m
+[1;31mE (102283) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (102283) DHT11: Failed to read data[0m
+[1;31mE (107303) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (107303) DHT11: Failed to read data[0m
+[1;31mE (112323) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (112323) DHT11: Failed to read data[0m
+[1;31mE (117343) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (117343) DHT11: Failed to read data[0m
+[0;32mI (117383) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (122363) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (122363) DHT11: Failed to read data[0m
+[1;31mE (127383) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (127383) DHT11: Failed to read data[0m
+[1;31mE (132403) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (132403) DHT11: Failed to read data[0m
+[1;31mE (137423) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (137423) DHT11: Failed to read data[0m
+[1;31mE (142443) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (142443) DHT11: Failed to read data[0m
+[1;31mE (147463) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (147463) DHT11: Failed to read data[0m
+[1;31mE (152483) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (152483) DHT11: Failed to read data[0m
+[1;31mE (157503) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (157503) DHT11: Failed to read data[0m
+[1;31mE (162523) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (162523) DHT11: Failed to read data[0m
+[1;31mE (167543) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (167543) DHT11: Failed to read data[0m
+[1;31mE (172563) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (172563) DHT11: Failed to read data[0m
+[0;32mI (177063) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (177583) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (177583) DHT11: Failed to read data[0m
+[1;31mE (182603) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (182603) DHT11: Failed to read data[0m
+[1;31mE (187623) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (187623) DHT11: Failed to read data[0m
+[1;31mE (192643) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (192643) DHT11: Failed to read data[0m
+[1;31mE (197663) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (197663) DHT11: Failed to read data[0m
+[1;31mE (202683) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (202683) DHT11: Failed to read data[0m
+[1;31mE (207703) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (207703) DHT11: Failed to read data[0m
+[1;31mE (212723) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (212723) DHT11: Failed to read data[0m
+[1;31mE (217743) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (217743) DHT11: Failed to read data[0m
+[1;31mE (222763) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (222763) DHT11: Failed to read data[0m
+[1;31mE (227783) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (227783) DHT11: Failed to read data[0m
+[1;31mE (232803) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (232803) DHT11: Failed to read data[0m
+[0;32mI (237283) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (237823) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (237823) DHT11: Failed to read data[0m
+[1;31mE (242843) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (242843) DHT11: Failed to read data[0m
+[1;31mE (247863) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (247863) DHT11: Failed to read data[0m
+[1;31mE (252883) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (252883) DHT11: Failed to read data[0m
+[1;31mE (257903) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (257903) DHT11: Failed to read data[0m
+[1;31mE (262923) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (262923) DHT11: Failed to read data[0m
+[1;31mE (267943) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (267943) DHT11: Failed to read data[0m
+[1;31mE (272963) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (272963) DHT11: Failed to read data[0m
+[1;31mE (277983) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (277983) DHT11: Failed to read data[0m
+[1;31mE (283003) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (283003) DHT11: Failed to read data[0m
+[1;31mE (288023) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (288023) DHT11: Failed to read data[0m
+[1;31mE (293043) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (293043) DHT11: Failed to read data[0m
+[1;31mE (298063) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (298063) DHT11: Failed to read data[0m
+[1;31mE (303083) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (303083) DHT11: Failed to read data[0m
+[1;31mE (308103) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (308103) DHT11: Failed to read data[0m
+[1;31mE (313123) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (313123) DHT11: Failed to read data[0m
+[1;31mE (318143) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (318143) DHT11: Failed to read data[0m
+[1;31mE (323163) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (323163) DHT11: Failed to read data[0m
+[1;31mE (328183) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (328183) DHT11: Failed to read data[0m
+[1;31mE (333203) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (333203) DHT11: Failed to read data[0m
+[1;31mE (338223) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (338223) DHT11: Failed to read data[0m
+[1;31mE (343243) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (343243) DHT11: Failed to read data[0m
+[1;31mE (348263) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (348263) DHT11: Failed to read data[0m
+[1;31mE (353283) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (353283) DHT11: Failed to read data[0m
+[1;31mE (358303) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (358303) DHT11: Failed to read data[0m
+[0;32mI (362393) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (363323) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (363323) DHT11: Failed to read data[0m
+[0;32mI (363483) http_server: Sent /hello response[0m
+[0;32mI (363933) http_server: Sent /hello response[0m
+[1;31mE (368343) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (368343) DHT11: Failed to read data[0m
+[0;32mI (369073) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (373363) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (373363) DHT11: Failed to read data[0m
+[0;32mI (374063) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (378383) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (378383) DHT11: Failed to read data[0m
+[0;32mI (379083) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (383403) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (383403) DHT11: Failed to read data[0m
+[0;32mI (384083) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (388423) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (388423) DHT11: Failed to read data[0m
+[0;32mI (389243) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (393443) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (393443) DHT11: Failed to read data[0m
+[0;32mI (394033) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (398463) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (398463) DHT11: Failed to read data[0m
+[0;32mI (399053) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (403483) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (403483) DHT11: Failed to read data[0m
+[0;32mI (404053) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (408503) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (408503) DHT11: Failed to read data[0m
+[0;32mI (408873) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (413523) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (413523) DHT11: Failed to read data[0m
+[0;32mI (414093) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (418543) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (418543) DHT11: Failed to read data[0m
+[0;32mI (419103) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (423563) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (423563) DHT11: Failed to read data[0m
+[0;32mI (424063) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (428583) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (428583) DHT11: Failed to read data[0m
+[0;32mI (429053) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (433603) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (433603) DHT11: Failed to read data[0m
+[0;32mI (434063) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (438623) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (438623) DHT11: Failed to read data[0m
+[0;32mI (439073) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (443643) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (443643) DHT11: Failed to read data[0m
+[0;32mI (444093) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (448663) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (448663) DHT11: Failed to read data[0m
+[0;32mI (449113) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (453683) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (453683) DHT11: Failed to read data[0m
+[0;32mI (454043) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (458703) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (458703) DHT11: Failed to read data[0m
+[0;32mI (459043) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (463723) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (463723) DHT11: Failed to read data[0m
+[0;32mI (464193) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (468743) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (468743) DHT11: Failed to read data[0m
+[0;32mI (469433) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (473763) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (473763) DHT11: Failed to read data[0m
+[0;32mI (477063) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (478783) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (478783) DHT11: Failed to read data[0m
+[1;31mE (483803) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (483803) DHT11: Failed to read data[0m
+[1;31mE (488823) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (488823) DHT11: Failed to read data[0m
+[1;31mE (493843) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (493843) DHT11: Failed to read data[0m
+[1;31mE (498863) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (498863) DHT11: Failed to read data[0m
+[1;31mE (503883) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (503883) DHT11: Failed to read data[0m
+[1;31mE (508903) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (508903) DHT11: Failed to read data[0m
+[1;31mE (513923) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (513923) DHT11: Failed to read data[0m
+[1;31mE (518943) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (518943) DHT11: Failed to read data[0m
+[1;31mE (523963) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (523963) DHT11: Failed to read data[0m
+[1;31mE (528983) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (528983) DHT11: Failed to read data[0m
+[1;31mE (534003) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (534003) DHT11: Failed to read data[0m
+[0;32mI (537073) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (539023) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (539023) DHT11: Failed to read data[0m
+[1;31mE (544043) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (544043) DHT11: Failed to read data[0m
+[1;31mE (549063) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (549063) DHT11: Failed to read data[0m
+[1;31mE (554083) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (554083) DHT11: Failed to read data[0m
+[1;31mE (559103) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (559103) DHT11: Failed to read data[0m
+[1;31mE (564123) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (564123) DHT11: Failed to read data[0m
+[1;31mE (569143) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (569143) DHT11: Failed to read data[0m
+[1;31mE (574163) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (574163) DHT11: Failed to read data[0m
+[1;31mE (579183) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (579183) DHT11: Failed to read data[0m
+[1;31mE (584203) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (584203) DHT11: Failed to read data[0m
+[1;31mE (589223) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (589223) DHT11: Failed to read data[0m
+[1;31mE (594243) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (594243) DHT11: Failed to read data[0m
+[0;32mI (597093) http_server: Sent /data response: {"temperature": 0.0, "humidity": 0.0}[0m
+[1;31mE (599263) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (599263) DHT11: Failed to read data[0m
+[1;31mE (604283) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (604283) DHT11: Failed to read data[0m
+[1;31mE (609303) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (609303) DHT11: Failed to read data[0m
+[1;31mE (614323) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (614323) DHT11: Failed to read data[0m
+[1;31mE (619343) DHT_11: Initialization error, problem in phase 'c[0m
+[0;33mW (619343) DHT11: Failed to read data[0m

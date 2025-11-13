@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subp
   file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/tmp"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/src"
-  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/tmp"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/src"
+  "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

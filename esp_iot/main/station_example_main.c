@@ -1,11 +1,12 @@
-/* WiFi station Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+/* WiFi station Example with DHT11 JSON API
+   -----------------------------------------
+   This code connects the ESP32 to WiFi, starts a simple HTTP server,
+   and serves both:
+      • /hello → "Hello World from ESP32!"
+      • /data  → {"temperature": 27.3, "humidity": 61.2}
+   Uses DHT11 sensor connected to GPIO 2.
 */
+
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -20,11 +21,12 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-/* The examples use WiFi configuration that you can set via project configuration menu
+// --- DHT11 sensor ---
+#include "dht.h"
 
-   If you'd rather not, just change the below entries to strings with
-   the config you want - ie #define EXAMPLE_WIFI_SSID "mywifissid"
-*/
+// ===============================
+// WiFi Configuration
+// ===============================
 #define EXAMPLE_ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
 #define EXAMPLE_ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASSWORD
 #define EXAMPLE_ESP_MAXIMUM_RETRY  CONFIG_ESP_MAXIMUM_RETRY
@@ -39,6 +41,7 @@
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_BOTH
 #define EXAMPLE_H2E_IDENTIFIER CONFIG_ESP_WIFI_PW_ID
 #endif
+
 #if CONFIG_ESP_WIFI_AUTH_OPEN
 #define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_OPEN
 #elif CONFIG_ESP_WIFI_AUTH_WEP
@@ -57,22 +60,24 @@
 #define ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_WAPI_PSK
 #endif
 
-/* FreeRTOS event group to signal when we are connected*/
-static EventGroupHandle_t s_wifi_event_group;
-
-/* The event group allows multiple bits for each event, but we only care about two events:
- * - we are connected to the AP with an IP
- * - we failed to connect after the maximum amount of retries */
+// ===============================
+// Globals
+// ===============================
+#define DHT_PIN 25
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
 
 static const char *TAG = "wifi station";
-
+static EventGroupHandle_t s_wifi_event_group;
 static int s_retry_num = 0;
+static float last_temp = 0.0f;
+static float last_humi = 0.0f;
 
-
-static void event_handler(void* arg, esp_event_base_t event_base,
-                                int32_t event_id, void* event_data)
+// ===============================
+// WiFi event handler
+// ===============================
+static void event_handler(void *arg, esp_event_base_t event_base,
+                          int32_t event_id, void *event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
@@ -84,21 +89,22 @@ static void event_handler(void* arg, esp_event_base_t event_base,
         } else {
             xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-        ESP_LOGI(TAG,"connect to the AP fail");
+        ESP_LOGI(TAG, "connect to the AP fail");
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
+        ip_event_got_ip_t *event = (ip_event_got_ip_t *) event_data;
         ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
         s_retry_num = 0;
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
 }
 
-void wifi_init_sta(void)
+// ===============================
+// WiFi init
+// ===============================
+static void wifi_init_sta(void)
 {
     s_wifi_event_group = xEventGroupCreate();
-
     ESP_ERROR_CHECK(esp_netif_init());
-
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     esp_netif_create_default_wifi_sta();
 
@@ -122,32 +128,23 @@ void wifi_init_sta(void)
         .sta = {
             .ssid = EXAMPLE_ESP_WIFI_SSID,
             .password = EXAMPLE_ESP_WIFI_PASS,
-            /* Authmode threshold resets to WPA2 as default if password matches WPA2 standards (password len => 8).
-             * If you want to connect the device to deprecated WEP/WPA networks, Please set the threshold value
-             * to WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK and set the password with length and format matching to
-             * WIFI_AUTH_WEP/WIFI_AUTH_WPA_PSK standards.
-             */
             .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
             .sae_pwe_h2e = ESP_WIFI_SAE_MODE,
             .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
         },
     };
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
-    ESP_ERROR_CHECK(esp_wifi_start() );
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+    ESP_ERROR_CHECK(esp_wifi_start());
 
     ESP_LOGI(TAG, "wifi_init_sta finished.");
 
-    /* Waiting until either the connection is established (WIFI_CONNECTED_BIT) or connection failed for the maximum
-     * number of re-tries (WIFI_FAIL_BIT). The bits are set by event_handler() (see above) */
     EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
-            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
-            pdFALSE,
-            pdFALSE,
-            portMAX_DELAY);
+                                           WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+                                           pdFALSE,
+                                           pdFALSE,
+                                           portMAX_DELAY);
 
-    /* xEventGroupWaitBits() returns the bits before the call returned, hence we can test which event actually
-     * happened. */
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "connected to ap SSID:%s password:%s",
                  EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS);
@@ -159,33 +156,56 @@ void wifi_init_sta(void)
     }
 }
 
-/* =====================================================
-   SIMPLE HTTP SERVER TO SEND "HELLO WORLD" TO FRONTEND
-   ===================================================== */
-
+// =====================================================
+// HTTP SERVER HANDLERS
+// =====================================================
 static const char *HTTP_TAG = "http_server";
+
+// --- /hello handler ---
 static esp_err_t hello_get_handler(httpd_req_t *req)
 {
-    // Allow CORS for browser requests
     httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
     httpd_resp_set_hdr(req, "Access-Control-Allow-Methods", "GET");
     httpd_resp_set_hdr(req, "Access-Control-Allow-Headers", "Content-Type");
 
-    const char* resp_str = "Hello World from ESP32!";
+    const char *resp_str = "Hello World from ESP32!";
     httpd_resp_send(req, resp_str, HTTPD_RESP_USE_STRLEN);
-    ESP_LOGI(HTTP_TAG, "Sent response: %s", resp_str);
+    ESP_LOGI(HTTP_TAG, "Sent /hello response");
     return ESP_OK;
 }
 
-/* --- URI configuration --- */
+// --- /data handler (DHT11 JSON) ---
+static esp_err_t data_get_handler(httpd_req_t *req)
+{
+    httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
+    httpd_resp_set_type(req, "application/json");
+
+    char json[128];
+    snprintf(json, sizeof(json),
+             "{\"temperature\": %.1f, \"humidity\": %.1f}",
+             last_temp, last_humi);
+
+    httpd_resp_send(req, json, HTTPD_RESP_USE_STRLEN);
+    ESP_LOGI(HTTP_TAG, "Sent /data response: %s", json);
+    return ESP_OK;
+}
+
+// --- URI configuration ---
 static const httpd_uri_t hello_uri = {
-    .uri      = "/hello",
-    .method   = HTTP_GET,
-    .handler  = hello_get_handler,
+    .uri = "/hello",
+    .method = HTTP_GET,
+    .handler = hello_get_handler,
     .user_ctx = NULL
 };
 
-/* --- Start HTTP server --- */
+static const httpd_uri_t data_uri = {
+    .uri = "/data",
+    .method = HTTP_GET,
+    .handler = data_get_handler,
+    .user_ctx = NULL
+};
+
+// --- Start HTTP server ---
 static httpd_handle_t start_webserver(void)
 {
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
@@ -195,6 +215,7 @@ static httpd_handle_t start_webserver(void)
 
     if (httpd_start(&server, &config) == ESP_OK) {
         httpd_register_uri_handler(server, &hello_uri);
+        httpd_register_uri_handler(server, &data_uri);
         return server;
     }
 
@@ -202,27 +223,46 @@ static httpd_handle_t start_webserver(void)
     return NULL;
 }
 
+// =====================================================
+// DHT11 SENSOR TASK
+// =====================================================
+static void dht_task(void *pvParameters)
+{
+    while (1) {
+        float temperature = 0, humidity = 0;
+        if (dht_read_float_data(DHT_TYPE_DHT11, DHT_PIN, &humidity, &temperature) == ESP_OK) {
+            last_temp = temperature;
+            last_humi = humidity;
+            ESP_LOGI("DHT11", "Temp: %.1f°C  Humidity: %.1f%%", temperature, humidity);
+        } else {
+            ESP_LOGW("DHT11", "Failed to read data");
+        }
+        vTaskDelay(pdMS_TO_TICKS(5000)); // every 5s
+    }
+}
 
+// =====================================================
+// MAIN ENTRY
+// =====================================================
 void app_main(void)
 {
-    //Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-      ESP_ERROR_CHECK(nvs_flash_erase());
-      ret = nvs_flash_init();
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
 
     if (CONFIG_LOG_MAXIMUM_LEVEL > CONFIG_LOG_DEFAULT_LEVEL) {
-        /* If you only want to open more logs in the wifi module, you need to make the max level greater than the default level,
-         * and call esp_log_level_set() before esp_wifi_init() to improve the log level of the wifi module. */
         esp_log_level_set("wifi", CONFIG_LOG_MAXIMUM_LEVEL);
     }
 
     ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
     wifi_init_sta();
-    // ✅ Start HTTP server after Wi-Fi connection
+
+    // Start HTTP server after Wi-Fi connection
     start_webserver();
+
+    // Start DHT11 task
+    xTaskCreate(dht_task, "dht_task", 2048, NULL, 5, NULL);
 }
-
-

@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/wifi_hello/build/bootloader/bootloader.elf
+file C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/bootloader/bootloader.elf

@@ -1,6 +1,4 @@
 <template>
-
-
   <main
     class="min-h-screen text-white p-6 overflow-visible
     [background-image:linear-gradient(to_bottom_right,#0a1b3f,#0e121b,#3b0a0a),linear-gradient(to_top_right,rgba(0,102,255,0.4),rgba(255,50,50,0.15))]
