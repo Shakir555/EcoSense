@@ -13,138 +13,117 @@
     <!-- TOP BAR -->
     <header
       class="relative z-10 flex items-center justify-between px-10 py-4
-            border-b border-white/10 backdrop-blur-xl
-            bg-black/10"
+             border-b border-white/10 backdrop-blur-xl bg-black/10"
     >
       <!-- Brand -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-4">
 
         <!-- Logo -->
         <img
-          src="/logo/enviro-iot.png"
+          src="/logo/eco_sense.png"
           alt="logo"
-          class="w-20 h-20 object-contain transition-transform duration-300 hover:scale-110"
+          class="w-16 h-16 object-contain opacity-90
+                 transition-transform duration-300 hover:scale-110"
         />
-        <!-- Title -->
+
         <div class="flex flex-col leading-tight">
-          <h1 class="text-2xl font-bold tracking-wide">
-            EcoSense
-          </h1>
+          <h1 class="text-3xl font-bold tracking-wide">EcoSense</h1>
+          <p class="text-emerald-300/70 text-sm mt-0.5">Enviro-IoT</p>
         </div>
       </div>
 
-      <!-- Right side: status + time -->
-      <div class="flex flex-col items-end justify-center text-sm leading-tight gap-2">
+      <!-- Status -->
+      <div class="flex flex-col items-end text-sm gap-2">
 
-        <!-- API Status pill (TOP) -->
+        <!-- API Status pill -->
         <div
           class="flex items-center gap-2 rounded-full px-3 py-1.5
-                border border-white/15 bg-white/5 backdrop-blur-xl"
+                 border border-white/15 bg-white/5 backdrop-blur-xl"
         >
           <span
             class="h-2.5 w-2.5 rounded-full"
             :class="connected
               ? 'bg-emerald-400 shadow-[0_0_10px_rgba(0,255,150,0.9)]'
-              : 'bg-red-500 shadow-[0_0_10px_rgba(255,80,80,0.9)]'"
-          ></span>
+              : 'bg-red-500 shadow-[0_0_10px_rgba(255,80,80,0.9)]'"></span>
 
           <span class="font-medium">
             {{ connected ? 'API Connected' : 'API Disconnected' }}
           </span>
         </div>
 
-        <!-- Last sensor update (BOTTOM) -->
+        <!-- Last update -->
         <div class="text-right text-xs text-gray-300/80">
           <p class="uppercase tracking-widest text-[0.65rem]">Last sensor update</p>
-          <p class="font-mono">
-            {{ lastUpdated || '—' }}
-          </p>
+          <p class="font-mono">{{ lastUpdated || '—' }}</p>
         </div>
       </div>
     </header>
 
-    <!-- LAYOUT -->
-    <section
-      class="relative z-10 mx-auto flex max-w-none gap-6 px-10 pb-10 pt-6 lg:pl-80 top-5"
-    >
-      SIDEBAR
-      <aside
-        class="hidden w-60 flex-shrink-0 flex-col gap-4 rounded-2xl
-               border border-white/10 bg-black/20 p-4 backdrop-blur-xl
-               lg:flex fixed left-0 -ml-30 overflow-y-auto fixed "
-      >
-        <p class="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-          Navigation
-        </p>
+    <!-- MAIN CONTENT -->
+    <section class="relative z-10 mx-auto max-w-7xl px-10 py-10">
 
-        <button class="sidebar-link-active">
-          <span class="text-sm">Dashboard</span>
-          <span class="text-[0.65rem] uppercase tracking-widest text-emerald-300/80">Live</span>
-        </button>
-      </aside>
+      <!-- TOP CARDS (CENTERED) -->
+      <div class="grid gap-6 md:grid-cols-2 w-fit mx-auto">
 
-      <!-- MAIN CONTENT -->
-      <div class="flex flex-1 flex-col items-center justify-center space-y-6">
-        <!-- TOP CARDS -->
-        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4 w-fit mx-auto justify-center">
-          <!-- Temperature -->
-          <div class="glass-card card-hover p-10 px-4 py-6 justify-center">
-            <div class="flex items-center justify-between">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Temperature</p>
-              <span class="rounded-full bg-emerald-400/10 px-4 py-1 text-[0.7rem] text-emerald-200">°C</span>
-            </div>
-            <p class="mt-3 text-3xl font-semibold">
-              {{ temperature.toFixed(1) }}
-              <span class="text-base text-gray-300">°C</span>
-            </p>
-            <p class="mt-1 text-xs text-gray-300/80">Indoor ambient reading from DHT11 sensor</p>
+        <!-- Temperature -->
+        <div class="glass-card card-hover p-8 w-68">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Temperature</p>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-[0.7rem] text-emerald-200">
+              °C
+            </span>
           </div>
+          <p class="mt-3 text-4xl font-semibold">
+            {{ temperature.toFixed(1) }}
+            <span class="text-base text-gray-300">°C</span>
+          </p>
+          <p class="mt-1 text-xs text-gray-300/80">Indoor ambient reading from DHT11 sensor</p>
+        </div>
 
-          <!-- Humidity -->
-          <div class="glass-card card-hover p-4 px-4 py-6">
-            <div class="flex items-center justify-between">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Humidity</p>
-              <span class="rounded-full bg-sky-400/15 px-2 py-0.5 text-[0.7rem] text-sky-200">%</span>
-            </div>
-            <p class="mt-3 text-3xl font-semibold">
-              {{ humidity.toFixed(1) }}
-              <span class="text-base text-gray-300">%</span>
-            </p>
-            <p class="mt-1 text-xs text-gray-300/80">Relative humidity based on latest sensor sample</p>
+        <!-- Humidity -->
+        <div class="glass-card card-hover p-8 w-68">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Humidity</p>
+            <span class="rounded-full bg-sky-400/15 px-3 py-1 text-[0.7rem] text-sky-200">
+              %
+            </span>
+          </div>
+          <p class="mt-3 text-4xl font-semibold">
+            {{ humidity.toFixed(1) }}
+            <span class="text-base text-gray-300">%</span>
+          </p>
+          <p class="mt-1 text-xs text-gray-300/80">Relative humidity based on latest sensor sample</p>
+        </div>
+      </div>
+
+      <!-- CHARTS -->
+      <div class="grid gap-6 mt-10 lg:grid-cols-2">
+
+        <!-- Temperature Chart -->
+        <div class="glass-card card-hover p-6">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-3">
+            Temperature
+          </h3>
+          <div class="h-64">   <!-- ↓ changed from h-80 to h-64 -->
+            <canvas ref="tempCanvas"></canvas>
           </div>
         </div>
 
-        <!-- TWO SEPARATE CHARTS -->
-        <div class="grid gap-4 lg:grid-cols-2">
-          
-          <!-- Temperature Chart -->
-          <div class="glass-card card-hover p-5">
-            <div class="mb-3">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
-                Temperature
-              </p>
-            </div>
-            <div class="h-80">
-              <canvas ref="tempCanvas"></canvas>
-            </div>
-          </div>
-
-          <!-- Humidity Chart -->
-          <div class="glass-card card-hover p-5">
-            <div class="mb-3">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
-                Humidity
-              </p>
-            </div>
-            <div class="h-80">
-              <canvas ref="humidityCanvas"></canvas>
-            </div>
+        <!-- Humidity Chart -->
+        <div class="glass-card card-hover p-6">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-3">
+            Humidity
+          </h3>
+          <div class="h-64">   <!-- ↓ changed from h-80 to h-64 -->
+            <canvas ref="humidityCanvas"></canvas>
           </div>
         </div>
       </div>
+
     </section>
   </main>
 </template>
+
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
