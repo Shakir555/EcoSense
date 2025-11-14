@@ -27,7 +27,7 @@ EcoSense uses a **client–server architecture** where the ESP32 provides sensor
 
 ---
 
-## 🌈 Web Dashboard UI (Preview)
+## Web Dashboard UI (Preview)
 
 EcoSense features a **clean**, **modern**, glass-style IoT dashboard with smooth gradients and real-time charts.
 
