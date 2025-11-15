@@ -1,0 +1,1924 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\wifi_station.elf C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+_BOOT)
+conW�source...
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              Wiets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 15 2025 18:19:23[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b77ch (112508) map[0m
+[0;32mI (126) esp_image: segment 1: paddr=0002b7a4 vaddr=3ffb0000 size=03f0ch ( 16140) load[0m
+[0;32mI (133) esp_image: segment 2: paddr=0002f6b8 vaddr=40080000 size=00960h (  2400) load[0m
+[0;32mI (134) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=85830h (546864) map[0m
+[0;32mI (325) esp_image: segment 4: paddr=000b5858 vaddr=40080960 size=175d4h ( 95700) load[0m
+[0;32mI (362) esp_image: segment 5: paddr=000cce34 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (374) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (374) boot: Disabling RNG early entropy source...[0m
+[0;32mI (385) cpu_start: Multicore app[0m
+[0;32mI (393) cpu_start: Pro cpu start user code[0m
+[0;32mI (393) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (393) app_init: Application information:[0m
+[0;32mI (393) app_init: Project name:     wifi_station[0m
+[0;32mI (398) app_init: App version:      v5.5.1[0m
+[0;32mI (401) app_init: Compile time:     Nov 15 2025 20:55:01[0m
+[0;32mI (406) app_init: ELF file SHA256:  8d33b9fd7...[0m
+[0;32mI (411) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (415) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (418) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (422) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (426) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (433) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (438) heap_init: At 3FFB7FB0 len 00028050 (160 KiB): DRAM[0m
+[0;32mI (443) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (448) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 40097F34 len 000080CC (32 KiB): IRAM[0m
+[0;32mI (461) spi_flash: detected chip: generic[0m
+[0;32mI (463) spi_flash: flash io: dio[0m
+[0;33mW (466) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (479) main_task: Started on CPU0[0m
+[0;32mI (489) main_task: Calling app_main()[0m
+[0;32mI (509) APP_MAIN: NVS initialized successfully[0m
+[0;32mI (509) APP_MAIN: Starting WiFi...[0m
+[0;32mI (529) wifi:wifi driver task: 3ffbfea4, prio:23, stack:6656, core=0[0m
+[0;32mI (539) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (539) wifi:wifi certification version: v7.0[0m
+[0;32mI (539) wifi:config NVS flash: enabled[0m
+[0;32mI (539) wifi:config nano formatting: disabled[0m
+[0;32mI (539) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (549) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (549) wifi:Init management short buffer num: 32[0m
+[0;32mI (559) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (559) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (569) wifi:Init static rx buffer num: 10[0m
+[0;32mI (569) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (569) wifi_init: rx ba win: 6[0m
+[0;32mI (579) wifi_init: accept mbox: 6[0m
+[0;32mI (579) wifi_init: tcpip mbox: 32[0m
+[0;32mI (579) wifi_init: udp mbox: 6[0m
+[0;32mI (579) wifi_init: tcp mbox: 6[0m
+[0;32mI (589) wifi_init: tcp tx win: 5760[0m
+[0;32mI (589) wifi_init: tcp rx win: 5760[0m
+[0;32mI (589) wifi_init: tcp mss: 1440[0m
+[0;32mI (599) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (599) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (609) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (609) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (689) wifi:mode : sta (b0:a7:32:de:e6:ac)[0m
+[0;32mI (689) wifi:enable tsf[0m
+[0;32mI (689) ESP WIFI SERVER: wifi_init_sta finished.[0m
+[0;32mI (709) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (709) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (729) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (739) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (779) wifi:connected with Salam_Maxis_2.4G, aid = 37, channel 5, BW20, bssid = 84:01:12:36:8a:04[0m
+[0;32mI (779) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (789) wifi:pm start, type: 1[0m
+
+[0;32mI (789) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (789) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (829) wifi:<ba-add>idx:0 (ifx:0, 84:01:12:36:8a:04), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1849) esp_netif_handlers: sta ip: 192.168.1.34, mask: 255.255.255.0, gw: 192.168.1.254[0m
+[0;32mI (1849) ESP WIFI SERVER: Got IP: 192.168.1.34[0m
+[0;32mI (1849) ESP WIFI SERVER: Connected to SSID:Salam_Maxis_2.4G[0m
+[0;32mI (1849) APP_MAIN: Starting web server...[0m
+[0;32mI (1859) ESP HTTP SERVER: Starting HTTP server on port 80[0m
+[0;32mI (1869) APP_MAIN: Configuring Rain Sensor..[0m
+[0;32mI (1869) RAIN_SENSOR: Initializing Rain Sensor (NEW ADC API)...[0m
+[0;32mI (1869) RAIN_SENSOR: ADC Calibration: ENABLED[0m
+[0;32mI (1879) RAIN_SENSOR: Rain Sensor Config Complete[0m
+[0;32mI (1879) APP_MAIN: Starting DHT11 task...[0m
+[0;32mI (1909) DHT-11: Temp: 30.0°C  Humidity: 83.0%[0m
+[0;32mI (1909) APP_MAIN: Configuring Rain Sensor...[0m
+[0;32mI (1909) RAIN_SENSOR: Initializing Rain Sensor (NEW ADC API)...[0m
+[1;31mE (1919) adc_oneshot: adc_oneshot_new_unit(98): adc1 is already in use[0m
+[0;32mI (1919) RAIN_SENSOR: ADC Calibration: ENABLED[0m
+[0;32mI (1919) RAIN_SENSOR: Rain Sensor Config Complete[0m
+[0;32mI (1929) APP_MAIN: Starting Rain Sensor Task...[0m
+[0;32mI (1929) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (1939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (1939) main_task: Returned from app_main()[0m
+[0;32mI (2239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (2239) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (2539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (2539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (2839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (2839) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (3139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (3139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (3169) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 83.0}[0m
+[0;32mI (3439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (3439) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (3739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (3739) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (4039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (4039) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (4339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (4339) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (4529) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 83.0}[0m
+[0;32mI (4639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (4639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (4939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (4939) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (5239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (5239) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (5539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (5539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (5839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (5839) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (6139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (6139) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (6439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (6439) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (6739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (6739) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (6929) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (7039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (7039) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (7339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (7339) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (7639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (7639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (7939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (7939) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (8239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (8239) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (8539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (8539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (8839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (8839) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (9139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (9139) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (9439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (9439) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (9739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (9739) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (10039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (10039) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (10339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (10339) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (10529) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (10639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (10639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (10939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (10939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (11239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (11239) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (11539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (11539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (11839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (11839) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (11949) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (12139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (12139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (12439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (12439) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (12739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (12739) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (13039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (13039) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (13339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (13339) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (13639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (13639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (13939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (13939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (14239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (14239) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (14539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (14539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (14839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (14839) RAIN_SENSOR: AO Voltage (mV): 2284[0m
+[0;32mI (15139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (15139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (15439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (15439) RAIN_SENSOR: AO Voltage (mV): 2294[0m
+[0;32mI (15539) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (15739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (15739) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (16039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (16039) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (16339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (16339) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (16639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (16639) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (16939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (16939) RAIN_SENSOR: AO Voltage (mV): 2300[0m
+[0;32mI (16969) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (17239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (17239) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (17539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (17539) RAIN_SENSOR: AO Voltage (mV): 2308[0m
+[0;32mI (17839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (17839) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (18139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (18139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (18439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (18439) RAIN_SENSOR: AO Voltage (mV): 1644[0m
+[0;32mI (18739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (18739) RAIN_SENSOR: AO Voltage (mV): 1697[0m
+[0;32mI (19039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (19039) RAIN_SENSOR: AO Voltage (mV): 1710[0m
+[0;32mI (19339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (19339) RAIN_SENSOR: AO Voltage (mV): 1714[0m
+[0;32mI (19639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (19639) RAIN_SENSOR: AO Voltage (mV): 1716[0m
+[0;32mI (19939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (19939) RAIN_SENSOR: AO Voltage (mV): 1729[0m
+[0;32mI (20239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (20239) RAIN_SENSOR: AO Voltage (mV): 1724[0m
+[0;32mI (20509) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (20539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (20539) RAIN_SENSOR: AO Voltage (mV): 1727[0m
+[0;32mI (20839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (20839) RAIN_SENSOR: AO Voltage (mV): 1734[0m
+[0;32mI (21139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (21139) RAIN_SENSOR: AO Voltage (mV): 1739[0m
+[0;32mI (21439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (21439) RAIN_SENSOR: AO Voltage (mV): 1737[0m
+[0;32mI (21739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (21739) RAIN_SENSOR: AO Voltage (mV): 1740[0m
+[0;32mI (21989) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (22039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (22039) RAIN_SENSOR: AO Voltage (mV): 1736[0m
+[0;32mI (22339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (22339) RAIN_SENSOR: AO Voltage (mV): 1680[0m
+[0;32mI (22639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (22639) RAIN_SENSOR: AO Voltage (mV): 2295[0m
+[0;32mI (22939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (22939) RAIN_SENSOR: AO Voltage (mV): 1735[0m
+[0;32mI (23239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (23239) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (23539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (23539) RAIN_SENSOR: AO Voltage (mV): 1864[0m
+[0;32mI (23839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (23839) RAIN_SENSOR: AO Voltage (mV): 2306[0m
+[0;32mI (24139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (24139) RAIN_SENSOR: AO Voltage (mV): 2298[0m
+[0;32mI (24439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (24439) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (24739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (24739) RAIN_SENSOR: AO Voltage (mV): 2296[0m
+[0;32mI (25039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (25039) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (25339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (25339) RAIN_SENSOR: AO Voltage (mV): 2295[0m
+[0;32mI (25509) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (25639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (25639) RAIN_SENSOR: AO Voltage (mV): 2298[0m
+[0;32mI (25939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (25939) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (26239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (26239) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (26539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (26539) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (26839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (26839) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (27009) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (27139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (27139) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (27439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (27439) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (27739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (27739) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (28039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (28039) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (28339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (28339) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (28639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (28639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (28939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (28939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (29239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (29239) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (29539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (29539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (29839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (29839) RAIN_SENSOR: AO Voltage (mV): 2302[0m
+[0;32mI (30139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (30139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (30439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (30439) RAIN_SENSOR: AO Voltage (mV): 2296[0m
+[0;32mI (30599) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (30739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (30739) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (31039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (31039) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (31339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (31339) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (31639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (31639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (31939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (31939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (32029) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (32239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (32239) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (32539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (32539) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (32839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (32839) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (33139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (33139) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (33439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (33439) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (33739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (33739) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (34039) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (34039) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (34339) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (34339) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (34639) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (34639) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (34939) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (34939) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (35239) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (35239) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (35519) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (35539) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (35539) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (35839) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (35839) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (36139) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (36139) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (36439) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (36439) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (36739) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (36739) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (37049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (37049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (37049) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (37349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (37349) RAIN_SENSOR: AO Voltage (mV): 2285[0m
+[0;32mI (37649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (37649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (37949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (37949) RAIN_SENSOR: AO Voltage (mV): 2298[0m
+[0;32mI (38249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (38249) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (38549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (38549) RAIN_SENSOR: AO Voltage (mV): 2285[0m
+[0;32mI (38849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (38849) RAIN_SENSOR: AO Voltage (mV): 2296[0m
+[0;32mI (39149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (39149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (39449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (39449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (39749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (39749) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (40049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (40049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (40349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (40349) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (40539) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (40649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (40649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (40949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (40949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (41249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (41249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (41549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (41549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (41849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (41849) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;32mI (42069) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (42149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (42149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (42449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (42449) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (42749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (42749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (43049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (43049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (43349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (43349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (43649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (43649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (43949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (43949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (44249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (44249) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (44549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (44549) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (44849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (44849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (45149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (45149) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (45449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (45449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (45549) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (45749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (45749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (46049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (46049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (46349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (46349) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (46649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (46649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (46949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (46949) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (47089) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (47249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (47249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (47549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (47549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (47849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (47849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (48149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (48149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (48449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (48449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (48749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (48749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (49049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (49049) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (49349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (49349) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (49649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (49649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (49949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (49949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (50249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (50249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (50499) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (50549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (50549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (50849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (50849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (51149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (51149) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (51449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (51449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (51749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (51749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (52049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (52049) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (52109) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (52349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (52349) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (52649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (52649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (52949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (52949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (53249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (53249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (53549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (53549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (53849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (53849) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (54149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (54149) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (54449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (54449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (54749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (54749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (55049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (55049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (55349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (55349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (55509) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (55649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (55649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (55949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (55949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (56249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (56249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (56549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (56549) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (56849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (56849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (57129) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (57149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (57149) RAIN_SENSOR: AO Voltage (mV): 2298[0m
+[0;32mI (57449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (57449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (57749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (57749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (58049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (58049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (58349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (58349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (58649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (58649) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (58949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (58949) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;32mI (59249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (59249) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (59549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (59549) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (59849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (59849) RAIN_SENSOR: AO Voltage (mV): 2296[0m
+[0;32mI (60149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (60149) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (60449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (60449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (60599) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (60749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (60749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (61049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (61049) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (61349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (61349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (61649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (61649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (61949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (61949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (62149) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (62249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (62249) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (62549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (62549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (62849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (62849) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (63149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (63149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (63449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (63449) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (63749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (63749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (64049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (64049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (64349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (64349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (64649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (64649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (64949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (64949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (65249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (65249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (65519) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (65549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (65549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (65849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (65849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (66149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (66149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (66449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (66449) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (66749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (66749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (67049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (67049) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (67169) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (67349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (67349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (67649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (67649) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (67949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (67949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (68249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (68249) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (68549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (68549) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (68849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (68849) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (69149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (69149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (69449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (69449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (69749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (69749) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (70049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (70049) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (70349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (70349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (70539) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (70649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (70649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (70949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (70949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (71249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (71249) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;32mI (71549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (71549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (71849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (71849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (72149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (72149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (72189) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;32mI (72449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (72449) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (72749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (72749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (73049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (73049) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (73349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (73349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (73649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (73649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (73949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (73949) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;32mI (74249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (74249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (74549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (74549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (74849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (74849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (75149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (75149) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (75449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (75449) RAIN_SENSOR: AO Voltage (mV): 2285[0m
+[0;32mI (75549) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;32mI (75749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (75749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (76049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (76049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (76349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (76349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (76649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (76649) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (76949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (76949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (77209) DHT-11: Temp: 29.0°C  Humidity: 82.0%[0m
+[0;32mI (77249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (77249) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (77549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (77549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (77849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (77849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (78149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (78149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (78449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (78449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (78749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (78749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (79049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (79049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (79349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (79349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (79649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (79649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (79949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (79949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (80249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (80249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (80489) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 82.0}[0m
+[0;32mI (80549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (80549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (80849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (80849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (81149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (81149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (81449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (81449) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (81749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (81749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (82049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (82049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (82229) DHT-11: Temp: 30.0°C  Humidity: 83.0%[0m
+[0;32mI (82349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (82349) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (82649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (82649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (82949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (82949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (83249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (83249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (83549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (83549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (83849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (83849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (84149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (84149) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[0;32mI (84449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (84449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (84749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (84749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (85049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (85049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (85349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (85349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (85489) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 83.0}[0m
+[0;32mI (85649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (85649) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (85949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (85949) RAIN_SENSOR: AO Voltage (mV): 2285[0m
+[0;32mI (86249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (86249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (86549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (86549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (86849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (86849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (87149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (87149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (87249) DHT-11: Temp: 29.0°C  Humidity: 82.0%[0m
+[0;32mI (87449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (87449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (87749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (87749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (88049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (88049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (88349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (88349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (88649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (88649) RAIN_SENSOR: AO Voltage (mV): 2295[0m
+[0;32mI (88949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (88949) RAIN_SENSOR: AO Voltage (mV): 2294[0m
+[0;32mI (89249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (89249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (89549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (89549) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (89849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (89849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (90149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (90149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (90449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (90449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (90499) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 82.0}[0m
+[0;32mI (90749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (90749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (91049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (91049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (91349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (91349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (91649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (91649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (91949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (91949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (92249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (92249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (92269) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (92549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (92549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (92849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (92849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (93149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (93149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (93449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (93449) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;32mI (93749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (93749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (94049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (94049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (94349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (94349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (94649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (94649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (94949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (94949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (95249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (95249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (95529) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (95549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (95549) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (95849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (95849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (96149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (96149) RAIN_SENSOR: AO Voltage (mV): 2295[0m
+[0;32mI (96449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (96449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (96749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (96749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (97049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (97049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (97289) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (97349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (97349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (97649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (97649) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (97949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (97949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (98249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (98249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (98549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (98549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (98849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (98849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (99149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (99149) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (99449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (99449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (99749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (99749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (100049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (100049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (100349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (100349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (100549) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (100649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (100649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (100949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (100949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (101249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (101249) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (101549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (101549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (101849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (101849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (102149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (102149) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (102309) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (102449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (102449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (102749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (102749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (103049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (103049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (103349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (103349) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (103649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (103649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (103949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (103949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (104249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (104249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (104549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (104549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (104849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (104849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (105149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (105149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (105449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (105449) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (105489) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (105749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (105749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (106049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (106049) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (106349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (106349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (106649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (106649) RAIN_SENSOR: AO Voltage (mV): 2293[0m
+[0;32mI (106949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (106949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (107249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (107249) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (107329) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (107549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (107549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (107849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (107849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (108149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (108149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (108449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (108449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (108749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (108749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (109049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (109049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (109349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (109349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (109649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (109649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (109949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (109949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (110249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (110249) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (110489) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (110549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (110549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (110849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (110849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (111149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (111149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (111449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (111449) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (111749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (111749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (112049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (112049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (112349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (112349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (112349) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (112649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (112649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (112949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (112949) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (113249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (113249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (113549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (113549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (113849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (113849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (114149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (114149) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (114449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (114449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (114749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (114749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (115049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (115049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (115349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (115349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (115499) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (115649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (115649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (115949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (115949) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;32mI (116249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (116249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (116549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (116549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (116849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (116849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (117149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (117149) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;32mI (117369) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (117449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (117449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (117749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (117749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (118049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (118049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (118349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (118349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (118649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (118649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (118949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (118949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (119249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (119249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (119549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (119549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (119849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (119849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (120149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (120149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (120449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (120449) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (120749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (120749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (121049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (121049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (121349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (121349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (121649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (121649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (121949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (121949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (122249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (122249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (122389) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (122549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (122549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (122849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (122849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (123149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (123149) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (123449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (123449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (123749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (123749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (124049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (124049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (124349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (124349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (124649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (124649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (124949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (124949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (125249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (125249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (125549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (125549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (125849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (125849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (126149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (126149) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (126449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (126449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (126749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (126749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (127049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (127049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (127349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (127349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (127409) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (127649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (127649) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;32mI (127949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (127949) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (128249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (128249) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (128549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (128549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (128849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (128849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (129149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (129149) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (129449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (129449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (129749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (129749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (130049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (130049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (130349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (130349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (130649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (130649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (130949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (130949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (131249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (131249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (131549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (131549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (131849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (131849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (132149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (132149) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (132429) DHT-11: Temp: 30.0°C  Humidity: 83.0%[0m
+[0;32mI (132449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (132449) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;32mI (132749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (132749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (133049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (133049) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;32mI (133349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (133349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (133649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (133649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (133949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (133949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (134249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (134249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (134549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (134549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (134849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (134849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (135149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (135149) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;32mI (135449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (135449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (135749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (135749) RAIN_SENSOR: AO Voltage (mV): 2295[0m
+[0;32mI (136049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (136049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (136349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (136349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (136649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (136649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (136949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (136949) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;33mW (137249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (137249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (137449) DHT-11: Temp: 29.0°C  Humidity: 82.0%[0m
+[0;33mW (137549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (137549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (137849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (137849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (138149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (138149) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;33mW (138449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (138449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (138749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (138749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (139049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (139049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (139349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (139349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (139559) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 82.0}[0m
+[0;33mW (139649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (139649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (139949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (139949) RAIN_SENSOR: AO Voltage (mV): 2265[0m
+[0;33mW (140249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (140249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (140549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (140549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (140849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (140849) RAIN_SENSOR: AO Voltage (mV): 2290[0m
+[0;33mW (141149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (141149) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;33mW (141449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (141449) RAIN_SENSOR: AO Voltage (mV): 2102[0m
+[0;33mW (141749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (141749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (142049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (142049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (142349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (142349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (142469) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;33mW (142649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (142649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (142949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (142949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (143249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (143249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (143549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (143549) RAIN_SENSOR: AO Voltage (mV): 2032[0m
+[0;33mW (143849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (143849) RAIN_SENSOR: AO Voltage (mV): 2017[0m
+[0;32mI (144149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (144149) RAIN_SENSOR: AO Voltage (mV): 1997[0m
+[0;32mI (144449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (144449) RAIN_SENSOR: AO Voltage (mV): 1992[0m
+[0;32mI (144749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (144749) RAIN_SENSOR: AO Voltage (mV): 1976[0m
+[0;32mI (145049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (145049) RAIN_SENSOR: AO Voltage (mV): 1978[0m
+[0;32mI (145349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (145349) RAIN_SENSOR: AO Voltage (mV): 1982[0m
+[0;32mI (145649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (145649) RAIN_SENSOR: AO Voltage (mV): 1981[0m
+[0;32mI (145949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (145949) RAIN_SENSOR: AO Voltage (mV): 1982[0m
+[0;32mI (146249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (146249) RAIN_SENSOR: AO Voltage (mV): 1980[0m
+[0;32mI (146549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (146549) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (146849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (146849) RAIN_SENSOR: AO Voltage (mV): 1966[0m
+[0;32mI (147149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (147149) RAIN_SENSOR: AO Voltage (mV): 1980[0m
+[0;32mI (147449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (147449) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (147489) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (147749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (147749) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (148049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (148049) RAIN_SENSOR: AO Voltage (mV): 1967[0m
+[0;32mI (148349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (148349) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (148649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (148649) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (148949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (148949) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (149249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (149249) RAIN_SENSOR: AO Voltage (mV): 1977[0m
+[0;32mI (149549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (149549) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (149849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (149849) RAIN_SENSOR: AO Voltage (mV): 1965[0m
+[0;32mI (150149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (150149) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (150449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (150449) RAIN_SENSOR: AO Voltage (mV): 1959[0m
+[0;32mI (150749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (150749) RAIN_SENSOR: AO Voltage (mV): 1968[0m
+[0;32mI (151049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (151049) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (151349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (151349) RAIN_SENSOR: AO Voltage (mV): 1960[0m
+[0;32mI (151649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (151649) RAIN_SENSOR: AO Voltage (mV): 1955[0m
+[0;32mI (151949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (151949) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (152249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (152249) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (152509) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (152549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (152549) RAIN_SENSOR: AO Voltage (mV): 1963[0m
+[0;32mI (152849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (152849) RAIN_SENSOR: AO Voltage (mV): 1956[0m
+[0;32mI (153149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (153149) RAIN_SENSOR: AO Voltage (mV): 1964[0m
+[0;32mI (153449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (153449) RAIN_SENSOR: AO Voltage (mV): 1956[0m
+[0;32mI (153749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (153749) RAIN_SENSOR: AO Voltage (mV): 1959[0m
+[0;32mI (154049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (154049) RAIN_SENSOR: AO Voltage (mV): 1955[0m
+[0;32mI (154349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (154349) RAIN_SENSOR: AO Voltage (mV): 1955[0m
+[0;32mI (154649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (154649) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (154949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (154949) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (155249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (155249) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (155549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (155549) RAIN_SENSOR: AO Voltage (mV): 1959[0m
+[0;32mI (155849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (155849) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (156149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (156149) RAIN_SENSOR: AO Voltage (mV): 1954[0m
+[0;32mI (156449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (156449) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (156749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (156749) RAIN_SENSOR: AO Voltage (mV): 1956[0m
+[0;32mI (157049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (157049) RAIN_SENSOR: AO Voltage (mV): 1954[0m
+[0;32mI (157349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (157349) RAIN_SENSOR: AO Voltage (mV): 1957[0m
+[0;32mI (157529) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (157649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (157649) RAIN_SENSOR: AO Voltage (mV): 1959[0m
+[0;32mI (157949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (157949) RAIN_SENSOR: AO Voltage (mV): 1962[0m
+[0;32mI (158249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (158249) RAIN_SENSOR: AO Voltage (mV): 1959[0m
+[0;32mI (158549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (158549) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (158849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (158849) RAIN_SENSOR: AO Voltage (mV): 1953[0m
+[0;32mI (159149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (159149) RAIN_SENSOR: AO Voltage (mV): 1955[0m
+[0;32mI (159449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (159449) RAIN_SENSOR: AO Voltage (mV): 1952[0m
+[0;32mI (159749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (159749) RAIN_SENSOR: AO Voltage (mV): 1961[0m
+[0;32mI (160049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (160049) RAIN_SENSOR: AO Voltage (mV): 1953[0m
+[0;32mI (160349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (160349) RAIN_SENSOR: AO Voltage (mV): 1953[0m
+[0;32mI (160649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (160649) RAIN_SENSOR: AO Voltage (mV): 1949[0m
+[0;32mI (160949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (160949) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (161249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (161249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (161549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (161549) RAIN_SENSOR: AO Voltage (mV): 1963[0m
+[0;32mI (161849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (161849) RAIN_SENSOR: AO Voltage (mV): 1952[0m
+[0;32mI (162149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (162149) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (162449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (162449) RAIN_SENSOR: AO Voltage (mV): 1949[0m
+[0;32mI (162549) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (162749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (162749) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (163049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (163049) RAIN_SENSOR: AO Voltage (mV): 1952[0m
+[0;32mI (163349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (163349) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (163649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (163649) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (163949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (163949) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (164249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (164249) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (164549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (164549) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (164849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (164849) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (165149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (165149) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (165449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (165449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (165749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (165749) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (166049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (166049) RAIN_SENSOR: AO Voltage (mV): 1950[0m
+[0;32mI (166349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (166349) RAIN_SENSOR: AO Voltage (mV): 1947[0m
+[0;32mI (166649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (166649) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (166949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (166949) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (167249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (167249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (167549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (167549) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (167569) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (167849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (167849) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (168149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (168149) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (168449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (168449) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (168749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (168749) RAIN_SENSOR: AO Voltage (mV): 1954[0m
+[0;32mI (169049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (169049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (169349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (169349) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (169649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (169649) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (169949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (169949) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (170249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (170249) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (170549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (170549) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (170849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (170849) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (171149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (171149) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (171449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (171449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (171749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (171749) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (172049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (172049) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (172349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (172349) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (172589) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (172649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (172649) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (172949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (172949) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (173249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (173249) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (173549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (173549) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (173849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (173849) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (174149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (174149) RAIN_SENSOR: AO Voltage (mV): 1935[0m
+[0;32mI (174449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (174449) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (174749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (174749) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (175049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (175049) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (175349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (175349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (175649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (175649) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (175949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (175949) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (176249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (176249) RAIN_SENSOR: AO Voltage (mV): 1932[0m
+[0;32mI (176549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (176549) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (176849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (176849) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (177149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (177149) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (177449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (177449) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (177609) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (177749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (177749) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (178049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (178049) RAIN_SENSOR: AO Voltage (mV): 1947[0m
+[0;32mI (178349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (178349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (178649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (178649) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (178949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (178949) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (179249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (179249) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (179549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (179549) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (179849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (179849) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (180149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (180149) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (180449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (180449) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (180749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (180749) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (181049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (181049) RAIN_SENSOR: AO Voltage (mV): 1944[0m
+[0;32mI (181349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (181349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (181649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (181649) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (181949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (181949) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (182249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (182249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (182549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (182549) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (182629) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (182849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (182849) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (183149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (183149) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (183449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (183449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (183749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (183749) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (184049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (184049) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (184349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (184349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (184649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (184649) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (184949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (184949) RAIN_SENSOR: AO Voltage (mV): 1933[0m
+[0;32mI (185249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (185249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (185549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (185549) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (185849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (185849) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (186149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (186149) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (186449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (186449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (186749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (186749) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (187049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (187049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (187349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (187349) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (187649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (187649) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (187649) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (187949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (187949) RAIN_SENSOR: AO Voltage (mV): 1935[0m
+[0;32mI (188249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (188249) RAIN_SENSOR: AO Voltage (mV): 1937[0m
+[0;32mI (188549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (188549) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (188849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (188849) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (189149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (189149) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (189449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (189449) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (189749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (189749) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (190049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (190049) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (190349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (190349) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (190649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (190649) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (190949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (190949) RAIN_SENSOR: AO Voltage (mV): 1932[0m
+[0;32mI (191249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (191249) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (191549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (191549) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (191849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (191849) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (192149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (192149) RAIN_SENSOR: AO Voltage (mV): 1933[0m
+[0;32mI (192449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (192449) RAIN_SENSOR: AO Voltage (mV): 1952[0m
+[0;32mI (192669) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (192749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (192749) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (193049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (193049) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (193349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (193349) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (193649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (193649) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (193949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (193949) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (194249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (194249) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (194549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (194549) RAIN_SENSOR: AO Voltage (mV): 1950[0m
+[0;32mI (194849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (194849) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (195149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (195149) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (195449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (195449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (195749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (195749) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (196049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (196049) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (196349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (196349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (196649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (196649) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (196949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (196949) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (197249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (197249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (197549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (197549) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (197689) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (197849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (197849) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (198149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (198149) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (198449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (198449) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (198749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (198749) RAIN_SENSOR: AO Voltage (mV): 1944[0m
+[0;32mI (199049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (199049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (199349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (199349) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (199569) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 83.0}[0m
+[0;32mI (199649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (199649) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (199949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (199949) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (200249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (200249) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (200549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (200549) RAIN_SENSOR: AO Voltage (mV): 1954[0m
+[0;32mI (200849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (200849) RAIN_SENSOR: AO Voltage (mV): 1944[0m
+[0;32mI (201149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (201149) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (201449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (201449) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (201749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (201749) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (202049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (202049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (202349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (202349) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (202649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (202649) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (202709) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (202949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (202949) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (203249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (203249) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (203549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (203549) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (203849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (203849) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (204149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (204149) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (204449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (204449) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (204749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (204749) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (205049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (205049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (205349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (205349) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (205649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (205649) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (205949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (205949) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (206249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (206249) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (206549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (206549) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (206849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (206849) RAIN_SENSOR: AO Voltage (mV): 1932[0m
+[0;32mI (207149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (207149) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (207449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (207449) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (207729) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (207749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (207749) RAIN_SENSOR: AO Voltage (mV): 1944[0m
+[0;32mI (208049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (208049) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (208349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (208349) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (208649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (208649) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (208949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (208949) RAIN_SENSOR: AO Voltage (mV): 1933[0m
+[0;32mI (209249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (209249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (209549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (209549) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (209849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (209849) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (210149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (210149) RAIN_SENSOR: AO Voltage (mV): 1947[0m
+[0;32mI (210449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (210449) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (210749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (210749) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (211049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (211049) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (211349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (211349) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (211649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (211649) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (211949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (211949) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (212249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (212249) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (212549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (212549) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (212749) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (212849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (212849) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (213149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (213149) RAIN_SENSOR: AO Voltage (mV): 1950[0m
+[0;32mI (213449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (213449) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (213749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (213749) RAIN_SENSOR: AO Voltage (mV): 1951[0m
+[0;32mI (214049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (214049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (214349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (214349) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (214649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (214649) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (214949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (214949) RAIN_SENSOR: AO Voltage (mV): 1935[0m
+[0;32mI (215249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (215249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (215549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (215549) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (215849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (215849) RAIN_SENSOR: AO Voltage (mV): 1928[0m
+[0;32mI (216149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (216149) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (216449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (216449) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (216749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (216749) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (217049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (217049) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (217349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (217349) RAIN_SENSOR: AO Voltage (mV): 1941[0m
+[0;32mI (217649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (217649) RAIN_SENSOR: AO Voltage (mV): 1939[0m
+[0;32mI (217769) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (217949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (217949) RAIN_SENSOR: AO Voltage (mV): 1944[0m
+[0;32mI (218249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (218249) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (218549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (218549) RAIN_SENSOR: AO Voltage (mV): 1933[0m
+[0;32mI (218849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (218849) RAIN_SENSOR: AO Voltage (mV): 1946[0m
+[0;32mI (219149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (219149) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (219449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (219449) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (219749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (219749) RAIN_SENSOR: AO Voltage (mV): 1945[0m
+[0;32mI (220049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (220049) RAIN_SENSOR: AO Voltage (mV): 1943[0m
+[0;32mI (220349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (220349) RAIN_SENSOR: AO Voltage (mV): 1940[0m
+[0;32mI (220649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (220649) RAIN_SENSOR: AO Voltage (mV): 1937[0m
+[0;32mI (220949) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (220949) RAIN_SENSOR: AO Voltage (mV): 1938[0m
+[0;32mI (221249) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (221249) RAIN_SENSOR: AO Voltage (mV): 1942[0m
+[0;32mI (221549) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (221549) RAIN_SENSOR: AO Voltage (mV): 1948[0m
+[0;32mI (221849) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (221849) RAIN_SENSOR: AO Voltage (mV): 2261[0m
+[0;32mI (222149) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (222149) RAIN_SENSOR: AO Voltage (mV): 2261[0m
+[0;32mI (222449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (222449) RAIN_SENSOR: AO Voltage (mV): 2256[0m
+[0;32mI (222749) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (222749) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;32mI (222789) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;32mI (223049) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (223049) RAIN_SENSOR: AO Voltage (mV): 2257[0m
+[0;32mI (223349) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (223349) RAIN_SENSOR: AO Voltage (mV): 2257[0m
+[0;32mI (223649) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (223649) RAIN_SENSOR: AO Voltage (mV): 1998[0m
+[0;33mW (223949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (223949) RAIN_SENSOR: AO Voltage (mV): 1991[0m
+[0;33mW (224249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (224249) RAIN_SENSOR: AO Voltage (mV): 2252[0m
+[0;33mW (224549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (224549) RAIN_SENSOR: AO Voltage (mV): 2258[0m
+[0;33mW (224849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (224849) RAIN_SENSOR: AO Voltage (mV): 2255[0m
+[0;33mW (225149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (225149) RAIN_SENSOR: AO Voltage (mV): 2251[0m
+[0;32mI (225449) RAIN_SENSOR: ☀️ No Rain[0m
+[0;32mI (225449) RAIN_SENSOR: AO Voltage (mV): 2262[0m
+[0;33mW (225749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (225749) RAIN_SENSOR: AO Voltage (mV): 2261[0m
+[0;33mW (226049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (226049) RAIN_SENSOR: AO Voltage (mV): 2263[0m
+[0;33mW (226349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (226349) RAIN_SENSOR: AO Voltage (mV): 2263[0m
+[0;33mW (226649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (226649) RAIN_SENSOR: AO Voltage (mV): 2258[0m
+[0;33mW (226949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (226949) RAIN_SENSOR: AO Voltage (mV): 2257[0m
+[0;33mW (227249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (227249) RAIN_SENSOR: AO Voltage (mV): 2261[0m
+[0;33mW (227549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (227549) RAIN_SENSOR: AO Voltage (mV): 2264[0m
+[0;32mI (227809) DHT-11: Temp: 29.0°C  Humidity: 83.0%[0m
+[0;33mW (227849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (227849) RAIN_SENSOR: AO Voltage (mV): 2261[0m
+[0;33mW (228149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (228149) RAIN_SENSOR: AO Voltage (mV): 2253[0m
+[0;33mW (228449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (228449) RAIN_SENSOR: AO Voltage (mV): 2263[0m
+[0;33mW (228749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (228749) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;33mW (229049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (229049) RAIN_SENSOR: AO Voltage (mV): 2262[0m
+[0;33mW (229349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (229349) RAIN_SENSOR: AO Voltage (mV): 2258[0m
+[0;33mW (229649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (229649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (229949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (229949) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;33mW (230249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (230249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (230549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (230549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (230849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (230849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (231149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (231149) RAIN_SENSOR: AO Voltage (mV): 2267[0m
+[0;33mW (231449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (231449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (231749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (231749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (232049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (232049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (232349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (232349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (232649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (232649) RAIN_SENSOR: AO Voltage (mV): 2267[0m
+[0;32mI (232829) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;33mW (232949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (232949) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;33mW (233249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (233249) RAIN_SENSOR: AO Voltage (mV): 2266[0m
+[0;33mW (233549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (233549) RAIN_SENSOR: AO Voltage (mV): 2267[0m
+[0;33mW (233849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (233849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (234149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (234149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (234449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (234449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (234749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (234749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (235049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (235049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (235349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (235349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (235649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (235649) RAIN_SENSOR: AO Voltage (mV): 2265[0m
+[0;33mW (235949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (235949) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;33mW (236249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (236249) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;33mW (236549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (236549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (236849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (236849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (237149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (237149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (237449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (237449) RAIN_SENSOR: AO Voltage (mV): 2268[0m
+[0;33mW (237749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (237749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (237849) DHT-11: Temp: 30.0°C  Humidity: 84.0%[0m
+[0;33mW (238049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (238049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (238349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (238349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (238649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (238649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (238949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (238949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (239249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (239249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (239549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (239549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (239849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (239849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (240149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (240149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (240449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (240449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (240749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (240749) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;33mW (241049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (241049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (241349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (241349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (241649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (241649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (241949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (241949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (242249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (242249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (242549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (242549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (242849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (242849) RAIN_SENSOR: AO Voltage (mV): 2283[0m
+[1;31mE (242869) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (242869) DHT-11: Failed to Read Data[0m
+[0;33mW (243149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (243149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (243449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (243449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (243749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (243749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (244049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (244049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (244349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (244349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (244649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (244649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (244949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (244949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (245249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (245249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (245549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (245549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (245849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (245849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (246149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (246149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (246449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (246449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (246749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (246749) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;33mW (247049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (247049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (247349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (247349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (247649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (247649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (247889) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;33mW (247949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (247949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (248249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (248249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (248549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (248549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (248849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (248849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (249149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (249149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (249449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (249449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (249749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (249749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (250049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (250049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (250349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (250349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (250649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (250649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (250949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (250949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (251249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (251249) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;33mW (251549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (251549) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;33mW (251849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (251849) RAIN_SENSOR: AO Voltage (mV): 2289[0m
+[0;33mW (252149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (252149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (252449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (252449) RAIN_SENSOR: AO Voltage (mV): 2297[0m
+[0;33mW (252749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (252749) RAIN_SENSOR: AO Voltage (mV): 2287[0m
+[0;32mI (252909) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;33mW (253049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (253049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (253349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (253349) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (253649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (253649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (253949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (253949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (254249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (254249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (254549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (254549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (254849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (254849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (255149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (255149) RAIN_SENSOR: AO Voltage (mV): 2285[0m
+[0;33mW (255449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (255449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (255749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (255749) RAIN_SENSOR: AO Voltage (mV): 2294[0m
+[0;33mW (256049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (256049) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (256349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (256349) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;33mW (256649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (256649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (256949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (256949) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (257249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (257249) RAIN_SENSOR: AO Voltage (mV): 2286[0m
+[0;33mW (257549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (257549) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (257849) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (257849) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;32mI (257929) DHT-11: Temp: 30.0°C  Humidity: 82.0%[0m
+[0;33mW (258149) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (258149) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (258449) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (258449) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (258749) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (258749) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (259049) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (259049) RAIN_SENSOR: AO Voltage (mV): 2292[0m
+[0;33mW (259349) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (259349) RAIN_SENSOR: AO Voltage (mV): 2288[0m
+[0;32mI (259569) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 30.0, "humidity": 82.0}[0m
+[0;33mW (259649) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (259649) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (259949) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (259949) RAIN_SENSOR: AO Voltage (mV): 2291[0m
+[0;33mW (260249) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (260249) RAIN_SENSOR: AO Voltage (mV): 2269[0m
+[0;33mW (260549) RAIN_SENSOR: 🌧️ Rain Detected![0m
+[0;32mI (260549) RAIN_SENSOR: AO Voltage (mV): 2269[0m

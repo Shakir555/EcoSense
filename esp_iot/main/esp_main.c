@@ -1,6 +1,7 @@
 // Libraries
 #include "header/esp_dht.h"
 #include "header/esp_server_wifi.h"
+#include "header/esp_rainSensor.h"
 
 #include "nvs_flash.h"
 #include "esp_log.h"
@@ -30,14 +31,24 @@ void app_main(void)
     ESP_LOGI(TAG, "Starting web server...");
     webserver_init();
 
+    // Rain Sensor Config
+    ESP_LOGI(TAG, "Configuring Rain Sensor..");
+    rainSensorConfig();
+
     // ==== DHT TASK START ====
     ESP_LOGI(TAG, "Starting DHT11 task...");
     xTaskCreate(
-        dht_task,       // Task function
-        "dht_task",     // Task name
-        4096,           // Stack size (2048 too small)
+        dht_task,       
+        "dht_task",     
+        4096,           
         NULL,
-        5,
+        4,
         NULL
     );
+
+    ESP_LOGI(TAG, "Configuring Rain Sensor...");
+    rainSensorConfig();
+
+    ESP_LOGI(TAG, "Starting Rain Sensor Task...");
+    xTaskCreate(rainSensorTask, "rain_task", 4096, NULL, 5, NULL);
 }

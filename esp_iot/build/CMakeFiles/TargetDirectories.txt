@@ -588,6 +588,13 @@ C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/bui
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/dht/CMakeFiles/install.dir
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/dht/CMakeFiles/install/local.dir
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/dht/CMakeFiles/install/strip.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/__idf_esp_adc.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/edit_cache.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/rebuild_cache.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/list_install_components.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/install.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/install/local.dir
+C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/esp_adc/CMakeFiles/install/strip.dir
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/main/CMakeFiles/__idf_main.dir
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/main/CMakeFiles/edit_cache.dir
 C:/Espressif/frameworks/esp-idf-v5.5.1/examples/wifi/getting_started/esp_iot/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

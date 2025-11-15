@@ -1,5 +1,6 @@
 source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/driver/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/efuse/Kconfig"
+source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/esp_adc/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/esp_coex/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/esp_common/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.5.1/components/esp_driver_ana_cmpr/Kconfig"

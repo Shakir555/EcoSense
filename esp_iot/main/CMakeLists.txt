@@ -3,6 +3,7 @@ idf_component_register(
         "esp_main.c"
         "esp_dht.c"
         "esp_server_wifi.c"
+        "esp_rainSensor.c"
         
     PRIV_REQUIRES 
         esp_wifi
@@ -12,6 +13,7 @@ idf_component_register(
         esp_http_server
         dht
         driver
+        esp_adc
 
     INCLUDE_DIRS 
         "."
