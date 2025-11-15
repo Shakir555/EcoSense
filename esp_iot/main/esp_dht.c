@@ -1,14 +1,23 @@
 // Libraries
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/event_groups.h"
 #include "dht.h"
+#include "esp_log.h"
+
 
 // DHT Pin
 #define DHT_PIN 25
 
-static float curTemp = 0.0f;
-static float curHumi = 0.0f;
+// DHT Tag
+#define DHT_TAG "DHT-11"
+
+float curTemp = 0.0f;
+float curHumi = 0.0f;
 
 // DHT 11 Sensor Task
-static void dht_task(void *pvParam)
+void dht_task(void *pvParam)
 {
     float temperature = 0;
     float humidity = 0;

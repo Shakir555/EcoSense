@@ -131,8 +131,8 @@ import { Chart, registerables } from 'chart.js'
 Chart.register(...registerables)
 
 // ESP32 endpoints
-const HELLO_URL = 'http://192.168.1.32/hello'
-const DATA_URL = 'http://192.168.1.32/data'
+const HELLO_URL = 'http://192.168.1.34/hello'
+const DATA_URL = 'http://192.168.1.34/data'
 
 // State
 const data = ref('Click the button to receive data')

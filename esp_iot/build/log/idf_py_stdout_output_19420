@@ -1,0 +1,671 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\wifi_station.elf C:\Espressif\frameworks\esp-idf-v5.5.1\examples\wifi\getting_started\esp_iot\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py'
+cs0_drv:0x00�ͅ���         Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi data    �ets Jul 29 2019 12:21:46[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 15 2025 18:19:23[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.0[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1a90ch (108812) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0002a934 vaddr=3ffb0000 size=03f0ch ( 16140) load[0m
+[0;32mI (131) esp_image: segment 2: paddr=0002e848 vaddr=40080000 size=017d0h (  6096) load[0m
+[0;32mI (134) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=833e4h (537572) map[0m
+[0;32mI (320) esp_image: segment 4: paddr=000b340c vaddr=400817d0 size=16764h ( 92004) load[0m
+[0;32mI (356) esp_image: segment 5: paddr=000c9b78 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (368) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (368) boot: Disabling RNG early entropy source...[0m
+[0;32mI (379) cpu_start: Multicore app[0m
+[0;32mI (387) cpu_start: Pro cpu start user code[0m
+[0;32mI (387) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (387) app_init: Application information:[0m
+[0;32mI (387) app_init: Project name:     wifi_station[0m
+[0;32mI (392) app_init: App version:      v5.5.1[0m
+[0;32mI (395) app_init: Compile time:     Nov 15 2025 18:18:50[0m
+[0;32mI (400) app_init: ELF file SHA256:  8be48fdf5...[0m
+[0;32mI (405) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (409) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (412) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (416) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (421) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (427) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (432) heap_init: At 3FFB7F80 len 00028080 (160 KiB): DRAM[0m
+[0;32mI (437) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (442) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (448) heap_init: At 40097F34 len 000080CC (32 KiB): IRAM[0m
+[0;32mI (455) spi_flash: detected chip: generic[0m
+[0;32mI (457) spi_flash: flash io: dio[0m
+[0;33mW (460) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (473) main_task: Started on CPU0[0m
+[0;32mI (483) main_task: Calling app_main()[0m
+[0;32mI (503) APP_MAIN: NVS initialized successfully[0m
+[0;32mI (503) APP_MAIN: Starting WiFi...[0m
+[0;32mI (513) wifi:wifi driver task: 3ffbfe74, prio:23, stack:6656, core=0[0m
+[0;32mI (523) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (523) wifi:wifi certification version: v7.0[0m
+[0;32mI (523) wifi:config NVS flash: enabled[0m
+[0;32mI (523) wifi:config nano formatting: disabled[0m
+[0;32mI (523) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (533) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (533) wifi:Init management short buffer num: 32[0m
+[0;32mI (543) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (543) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (553) wifi:Init static rx buffer num: 10[0m
+[0;32mI (553) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (553) wifi_init: rx ba win: 6[0m
+[0;32mI (563) wifi_init: accept mbox: 6[0m
+[0;32mI (563) wifi_init: tcpip mbox: 32[0m
+[0;32mI (563) wifi_init: udp mbox: 6[0m
+[0;32mI (563) wifi_init: tcp mbox: 6[0m
+[0;32mI (573) wifi_init: tcp tx win: 5760[0m
+[0;32mI (573) wifi_init: tcp rx win: 5760[0m
+[0;32mI (573) wifi_init: tcp mss: 1440[0m
+[0;32mI (583) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (583) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (593) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (593) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (673) wifi:mode : sta (b0:a7:32:de:e6:ac)[0m
+[0;32mI (673) wifi:enable tsf[0m
+[0;32mI (673) ESP WIFI SERVER: wifi_init_sta finished.[0m
+[0;32mI (693) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (703) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (723) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (733) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (763) wifi:connected with Salam_Maxis_2.4G, aid = 26, channel 5, BW20, bssid = 84:01:12:36:8a:04[0m
+[0;32mI (763) wifi:security: WPA2-PSK, phy: bgn, rssi: -38[0m
+[0;32mI (763) wifi:pm start, type: 1[0m
+
+[0;32mI (763) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (793) wifi:<ba-add>idx:0 (ifx:0, 84:01:12:36:8a:04), tid:0, ssn:1, winSize:64[0m
+[0;32mI (803) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1823) esp_netif_handlers: sta ip: 192.168.1.34, mask: 255.255.255.0, gw: 192.168.1.254[0m
+[0;32mI (1823) ESP WIFI SERVER: Got IP: 192.168.1.34[0m
+[0;32mI (1823) ESP WIFI SERVER: Connected to SSID:Salam_Maxis_2.4G[0m
+[0;32mI (1823) APP_MAIN: Starting web server...[0m
+[0;32mI (1833) ESP HTTP SERVER: Starting HTTP server on port 80[0m
+[0;32mI (1843) APP_MAIN: Starting DHT11 task...[0m
+[0;32mI (1863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1863) main_task: Returned from app_main()[0m
+[0;32mI (6883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (11903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (16923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (21943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (26963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (31983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (37003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (42023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (47043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (52063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (57083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (62103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (67123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (72143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (77163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (82183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (87203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (92223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (97243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (102263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (107283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (112303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (117323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (122343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (127363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (132383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (137403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (142423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (147443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (152463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (157483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (162503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (167523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (172543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (177563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (182583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (187603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (192623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (192753) ESP HTTP SERVER: Sent /hello response[0m
+[0;32mI (192943) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (197643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (197843) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (202663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (203273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (203883) ESP HTTP SERVER: Sent /hello response[0m
+[0;32mI (203903) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (207683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (208213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (212703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (213233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (217723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (218343) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (222743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (223343) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (227763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (228253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (232783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (233273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (237803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (238213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (242823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (243233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (247843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (248323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (252863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (253243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (257883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (258263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (262903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (263273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (267923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (272943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (277963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (282983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (288003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (293023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (298043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (303063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (308083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (313103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (318123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (322273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (323143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (328163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (333183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (338203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (343223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (348243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (353263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (358283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (363303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (368323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (373343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (378363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (382303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (383383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (388403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (393423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (398443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (403463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (408483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (413503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (418523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (423543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (428563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (433583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (438603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (443623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (448643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (453663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (458683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (463703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (464403) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (468723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (473743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (478763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (483783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (486873) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (487243) ESP HTTP SERVER: Sent /hello response[0m
+[0;32mI (487253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (488803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (492253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (493823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (497273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (498843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (502283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (503863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (507323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (508883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (512313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (513903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (517243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (518923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (522253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (523943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (527283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (528963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (532223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (533983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (537323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (539003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (542323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (544023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (547263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (549043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (552253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (554063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (557283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (559083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (562223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (564103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (567323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (569123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (572323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (574143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (577263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (579163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (582263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (584183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (587293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (589203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (592223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (594223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (597333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (599243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (602333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (604263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (607263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (609283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (612263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (614303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (617293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (619323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (622223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (624343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (627333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (629363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (632333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (634383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (637263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (639403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (642263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (644423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (647303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (649443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (652313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (654463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (657343) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (659483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (662343) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (664503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (667273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (669523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (672273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (674543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (677293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (679563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (682223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (684583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (687323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (689603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (692243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (694623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (697263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (699643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (702273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (704663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (707293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (709683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (712223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (714703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (717323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (719723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (722243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (724743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (727263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (729763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (732303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (734783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (737293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (739803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (742223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (744823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (747333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (749843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (752243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (754863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (757273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (759883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (762283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (764903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (767303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (769923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (772233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (774943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (777343) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (779963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (782353) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (784983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (787273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (790003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (792283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (795023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (797313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (800043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (802233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (805063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (807243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (810083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (812263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (815103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (817213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (820123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (822293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (825143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (827313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (830163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (832233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (835183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (837253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (840203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (842263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (845223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (847283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (850243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (852303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (855263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (857313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (860283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (862243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (865303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (867353) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (870323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (872263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (875343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (877283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (880363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (882303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (885383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (887313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (890403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (892243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (895423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (897253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (900443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (902273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (905463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (907213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (910483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (912303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (915503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (917323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (920523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (922243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (925543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (927253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (930563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (932273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (935583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (937203) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (940603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (942303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (945623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (947333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (950643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (952253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (955663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (957273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (960683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (962273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (965703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (967233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (970723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (972313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (975743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (977333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (980763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (982253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (985783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (987263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (990803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (992283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (995823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (997243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1000843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1002313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1005863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1007333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1010883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1012253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1015903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1017263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1020923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1022283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1025943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1027203) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1030963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1032213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1035983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1037243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1041003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1042253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1046023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1047283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1051043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1052293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1056063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1057243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1061083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1062323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1066103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1067353) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1071123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1072263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1076143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1077283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1081163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1082293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1086183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1087243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1091203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1092323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1096223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1097253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1101243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1102213) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1106263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1111283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1116303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1121323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1126343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1131363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1136383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1141403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1146423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1151443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1156463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1161483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1162293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1166503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1171523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1176543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1181563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1186583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1191603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1196623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1201643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1206663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1211683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1216703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1221723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1226743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1231763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1236783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1241803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1246823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1251843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1256863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1261883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1266903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1271923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1276943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1281963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1286983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1292003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1297023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1302043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1307063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1312083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1313523) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1317103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1317313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1322123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1322243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1327143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1327263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1332163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1332363) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1337183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1337373) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1342203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1342233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1347223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1347313) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1352243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1352253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1357263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1357273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1362263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1362283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1367283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1367303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1372243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1372323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1377323) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1377343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1382333) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1382363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1387253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1387383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1392403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1397423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1402233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1402443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1407463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1412483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1417503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1422523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1427543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1432563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1437583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1442603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1447623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1452643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1457663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1462233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1462683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1467703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1472723) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1477743) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1482763) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1487783) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1492803) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1497823) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1502843) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1507863) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1512883) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1517903) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1522233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1522923) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1527943) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1532963) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1537983) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1543003) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1548023) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1553043) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1558063) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1563083) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1568103) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1573123) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1578143) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1582243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1583163) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1587243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1588183) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1592203) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1593203) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1597223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1598223) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1602293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1603243) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1607243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1608263) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1612233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1613283) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1617253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1618303) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1622273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1623323) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1627283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1628343) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1632293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1633363) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1637223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1638383) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1642233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1643403) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1648423) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1653443) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1658463) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1663483) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1668503) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1673523) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1678543) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1683563) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1688583) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1693603) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1697123) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1698623) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1702243) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1703643) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1707253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1708663) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1712283) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1713683) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1717223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1718703) DHT-11: Temp: 1.0°C  Humidity: 3.0%[0m
+[0;32mI (1722303) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1723723) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1723723) DHT-11: Failed to Read Data[0m
+[0;32mI (1727233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1728743) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1728743) DHT-11: Failed to Read Data[0m
+[0;32mI (1732253) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1733763) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1733763) DHT-11: Failed to Read Data[0m
+[0;32mI (1737263) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1738783) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1738783) DHT-11: Failed to Read Data[0m
+[0;32mI (1742203) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[0;32mI (1743613) ESP HTTP SERVER: Sent /hello response[0m
+[0;32mI (1743633) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1743803) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1743803) DHT-11: Failed to Read Data[0m
+[0;32mI (1748623) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1748823) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1748823) DHT-11: Failed to Read Data[0m
+[0;32mI (1753653) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1753843) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1753843) DHT-11: Failed to Read Data[0m
+[0;32mI (1758663) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 1.0, "humidity": 3.0}[0m
+[1;31mE (1758863) DHT_11: Initialization error, problem in phase 'B[0m
+[0;32mI (1758863) DHT-11: Failed to Read Data[0m
+[0;32mI (1763883) DHT-11: Temp: 29.0°C  Humidity: 90.0%[0m
+[0;32mI (1764293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 90.0}[0m
+[0;32mI (1768903) DHT-11: Temp: 29.0°C  Humidity: 85.0%[0m
+[0;32mI (1769223) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 85.0}[0m
+[0;32mI (1773923) DHT-11: Temp: 29.0°C  Humidity: 85.0%[0m
+[0;32mI (1774233) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 85.0}[0m
+[0;32mI (1778633) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 85.0}[0m
+[0;32mI (1778943) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (1783963) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (1784273) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 84.0}[0m
+[0;32mI (1788983) DHT-11: Temp: 29.0°C  Humidity: 84.0%[0m
+[0;32mI (1789293) ESP HTTP SERVER: Sent DHT JSON: {"temperature": 29.0, "humidity": 84.0}[0m
