@@ -63,10 +63,10 @@
     <section class="relative z-10 mx-auto max-w-7xl px-10 py-10">
 
       <!-- TOP CARDS (CENTERED) -->
-      <div class="grid gap-6 md:grid-cols-2 w-fit mx-auto">
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto">
 
         <!-- Temperature -->
-        <div class="glass-card card-hover p-8 w-68">
+        <div class="glass-card card-hover p-8 w-62">
           <div class="flex items-center justify-between">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Temperature</p>
             <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-[0.7rem] text-emerald-200">
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Humidity -->
-        <div class="glass-card card-hover p-8 w-68">
+        <div class="glass-card card-hover p-8 w-62">
           <div class="flex items-center justify-between">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Humidity</p>
             <span class="rounded-full bg-sky-400/15 px-3 py-1 text-[0.7rem] text-sky-200">
@@ -94,36 +94,71 @@
           </p>
           <p class="mt-1 text-xs text-gray-300/80">Relative humidity based on latest sensor sample</p>
         </div>
+
+        <!-- Rain Sensor -->
+        <div class="glass-card card-hover p-8 w-62">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
+              Rain Sensor
+            </p>
+            <span class="rounded-full bg-blue-400/10 px-3 py-1 text-[0.7rem] text-blue-200">
+              Wet %
+            </span>
+          </div>
+
+          <p class="mt-3 text-4xl font-semibold">
+            {{ rainPercent.toFixed(1) }}
+            <span class="text-base text-gray-300">%</span>
+          </p>
+
+          <p class="mt-1 text-xs text-gray-300/80">
+            Status:
+            <span :class="rain === 0 ? 'text-red-400' : 'text-emerald-400'">
+              {{ rain === 0 ? 'Wet (Rain Detected)' : 'Dry' }}
+            </span>
+          </p>
+        </div>
       </div>
 
       <!-- CHARTS -->
-      <div class="grid gap-6 mt-10 lg:grid-cols-2">
+      <div class="grid gap-6 mt-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
         <!-- Temperature Chart -->
-        <div class="glass-card card-hover p-6">
-          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-3">
+        <div class="glass-card card-hover p-4">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
             Temperature
           </h3>
-          <div class="h-64">   <!-- ↓ changed from h-80 to h-64 -->
+          <div class="h-64"> <!-- smaller height -->
             <canvas ref="tempCanvas"></canvas>
           </div>
         </div>
 
         <!-- Humidity Chart -->
-        <div class="glass-card card-hover p-6">
-          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-3">
+        <div class="glass-card card-hover p-4">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
             Humidity
           </h3>
-          <div class="h-64">   <!-- ↓ changed from h-80 to h-64 -->
+          <div class="h-64"> <!-- smaller height -->
             <canvas ref="humidityCanvas"></canvas>
           </div>
         </div>
+
+        <!-- Rain Wetness Chart -->
+        <div class="glass-card card-hover p-4">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
+            Rain Wetness (%)
+          </h3>
+          <div class="h-64"> <!-- smaller height -->
+            <canvas ref="rainSensorCanvas"></canvas>
+          </div>
+        </div>
+
       </div>
+
 
     </section>
   </main>
 </template>
-
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
@@ -132,24 +167,33 @@ Chart.register(...registerables)
 
 // ESP32 endpoints
 const HELLO_URL = 'http://192.168.1.34/hello'
-const DATA_URL = 'http://192.168.1.34/data'
+const DHT_DATA_URL = 'http://192.168.1.34/dht_data'
+const RainSensor_DATA_URL = 'http://192.168.1.34/rainSensor_data'
 
 // State
 const data = ref('Click the button to receive data')
 const loading = ref(false)
 const connected = ref(false)
 
+// Data
 const temperature = ref(0)
 const humidity = ref(0)
+const rain = ref(0)
+const rainPercent = ref(0)
 const lastUpdated = ref('')
 
 const history = ref([])
+const rainHistory = ref([])
 
+// Canvas
 const tempCanvas = ref(null)
 const humidityCanvas = ref(null)
+const rainSensorCanvas = ref(null)
 
+// Chart
 let tempChart = null
 let humidityChart = null
+let rainSensorChart = null
 
 const updateLastUpdated = () => {
   lastUpdated.value = new Date().toLocaleTimeString()
@@ -175,10 +219,10 @@ const getData = async () => {
   }
 }
 
-// GET /data
+// GET /dht_data
 const fetchSensorData = async () => {
   try {
-    const res = await fetch(DATA_URL)
+    const res = await fetch(DHT_DATA_URL)
     if (!res.ok) throw new Error('HTTP Error')
 
     const json = await res.json()
@@ -201,6 +245,36 @@ const fetchSensorData = async () => {
     }
   } catch (e) {
     connected.value = false
+  }
+}
+
+// GET /rainSensor_data
+const fetchRainSensorData = async () => {
+  try {
+    const res = await fetch(RainSensor_DATA_URL)
+    if (!res.ok) throw new Error('HTTP Error')
+
+    const json = await res.json()
+
+    if (
+      typeof json['Rain Sensor Digital Output'] === 'number' &&
+      typeof json['Rain Sensor Analog Percentage Output'] === 'number'
+    ) {
+      rain.value = json['Rain Sensor Digital Output']
+      rainPercent.value = json['Rain Sensor Analog Percentage Output']
+
+      rainHistory.value.push({
+        time: new Date().toLocaleTimeString(),
+        percent: rainPercent.value,
+        state: rain.value
+      })
+
+      if (rainHistory.value.length > 20) rainHistory.value.shift()
+
+      updateRainChart()
+    }
+  } catch (e) {
+    console.log('Rain sensor fetch failed')
   }
 }
 
@@ -262,6 +336,35 @@ const initHumidityChart = () => {
   })
 }
 
+// Rain chart
+const initRainChart = () => {
+  const ctx = rainSensorCanvas.value.getContext('2d')
+  rainSensorChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: rainHistory.value.map(p => p.time),
+      datasets: [{
+        label: 'Rain Wetness (%)',
+        data: rainHistory.value.map(p => p.percent),
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 2,
+        borderColor: 'rgba(96,165,250,1)',
+        backgroundColor: 'rgba(96,165,250,0.12)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#e5e7eb' } } },
+      scales: {
+        x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.15)' } },
+        y: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.18)' } }
+      }
+    }
+  })
+}
+
 const updateCharts = () => {
   if (tempChart) {
     tempChart.data.labels = history.value.map(p => p.time)
@@ -276,14 +379,25 @@ const updateCharts = () => {
   }
 }
 
+const updateRainChart = () => {
+  if (!rainSensorChart) return
+  rainSensorChart.data.labels = rainHistory.value.map(p => p.time)
+  rainSensorChart.data.datasets[0].data = rainHistory.value.map(p => p.percent)
+  rainSensorChart.update('active')
+}
+
 onMounted(async () => {
   getData()
   fetchSensorData()
+  fetchRainSensorData()
+
   setInterval(fetchSensorData, 5000)
+  setInterval(fetchRainSensorData, 5000)
 
   await nextTick()
   initTempChart()
   initHumidityChart()
+  initRainChart()
 })
 </script>
 

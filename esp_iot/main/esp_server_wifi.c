@@ -14,6 +14,7 @@
 #include "lwip/ip4_addr.h"
 
 #include "header/esp_dht.h"
+#include "header/esp_rainSensor.h"
 
 // WiFi Configuration
 #define EXAMPLE_ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
@@ -127,7 +128,7 @@ static esp_err_t string_get_handler(httpd_req_t *req)
     return ESP_OK;
 }
 
-// /data (DHT11 sensor)
+// data (DHT11 sensor)
 static esp_err_t dht_get_handler(httpd_req_t *req)
 {
     char dht_json[128];
@@ -145,6 +146,24 @@ static esp_err_t dht_get_handler(httpd_req_t *req)
     return ESP_OK;
 }
 
+// data (Rain Sensor)
+static esp_err_t rainSensor_get_handler(httpd_req_t *req)
+{
+    char rainSensor_json[128];
+
+    httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
+    httpd_resp_set_type(req, "application/json");
+
+    snprintf(rainSensor_json, sizeof(rainSensor_json),
+            "{\"Rain Sensor Digital Output\": %d, \"Rain Sensor Analog Percentage Output\": %.1f}",
+            do_state, wetPercent);
+    
+    httpd_resp_send(req, rainSensor_json, HTTPD_RESP_USE_STRLEN);
+
+    ESP_LOGI(HTTP_TAG, "Sent RainSensor JSON: %s", rainSensor_json);
+    return ESP_OK;
+}
+
 // URI Routing
 static const httpd_uri_t string_uri = {
     .uri = "/hello",
@@ -153,9 +172,15 @@ static const httpd_uri_t string_uri = {
 };
 
 static const httpd_uri_t dht_uri = {
-    .uri = "/data",
+    .uri = "/dht_data",
     .method = HTTP_GET,
     .handler = dht_get_handler
+};
+
+static const httpd_uri_t rainSensor_uri = {
+    .uri = "/rainSensor_data",
+    .method = HTTP_GET,
+    .handler = rainSensor_get_handler
 };
 
 // HTTP Server Init
@@ -170,6 +195,7 @@ httpd_handle_t webserver_init(void)
     {
         httpd_register_uri_handler(server, &string_uri);
         httpd_register_uri_handler(server, &dht_uri);
+        httpd_register_uri_handler(server, &rainSensor_uri);
         return server;
     }
 

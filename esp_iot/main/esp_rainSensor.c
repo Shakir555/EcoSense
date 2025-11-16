@@ -18,6 +18,9 @@
 int do_state = 0;
 int ao_value = 0;
 
+// Rain Sensor Wet Percentage
+float wetPercent = 0.0f;
+
 // ADC handles
 adc_oneshot_unit_handle_t adc1_handle;
 adc_cali_handle_t adc_cali_handle = NULL;
@@ -88,23 +91,36 @@ void rainSensorTask(void *param)
 
         if (adc_calibration_enabled) {
             adc_cali_raw_to_voltage(adc_cali_handle, raw_value, &ao_value);
+
+            // Convert mV (0–3300) into wetness %
+            wetPercent = (1.0f - ((float)ao_value / 3300.0f)) * 100.0f;
+
         } else {
-            ao_value = raw_value;  // fallback raw
+            ao_value = raw_value;  // RAW fallback (0–4095)
+
+            // Convert raw ADC into wetness %
+            wetPercent = (1.0f - ((float)ao_value / 4095.0f)) * 100.0f;
         }
 
-        // Print digital state
+        // Clamp %
+        if (wetPercent < 0) wetPercent = 0;
+        if (wetPercent > 100) wetPercent = 100;
+
+        // ------------------------
+        // LOG OUTPUT
+        // ------------------------
         if (do_state == 0) {
             ESP_LOGW(TAG, "🌧️ Rain Detected!");
         } else {
             ESP_LOGI(TAG, "☀️ No Rain");
         }
 
-        // Print analog wetness
         if (adc_calibration_enabled)
-            ESP_LOGI(TAG, "AO Voltage (mV): %d", ao_value);
+            ESP_LOGI(TAG, "AO Voltage (mV): %d  | Wetness: %.1f%%", ao_value, wetPercent);
         else
-            ESP_LOGI(TAG, "AO Raw (0–4095): %d", ao_value);
+            ESP_LOGI(TAG, "AO Raw: %d | Wetness: %.1f%%", ao_value, wetPercent);
 
         vTaskDelay(pdMS_TO_TICKS(300));
     }
 }
+

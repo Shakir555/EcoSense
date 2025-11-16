@@ -8,6 +8,8 @@ extern "C" {
 extern int do_state;
 extern int ao_value;
 
+extern float wetPercent;
+
 void rainSensorConfig(void);
 void rainSensorTask(void *pvParameters);
 
