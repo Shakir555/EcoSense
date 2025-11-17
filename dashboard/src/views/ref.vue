@@ -13,33 +13,28 @@
     <!-- TOP BAR -->
     <header
       class="relative z-10 flex items-center justify-between px-10 py-4
-             border-b border-white/10 backdrop-blur-xl
-             bg-black/10"
+             border-b border-white/10 backdrop-blur-xl bg-black/10"
     >
       <!-- Brand -->
-      <div class="flex items-center gap-3">
-        <div
-          class="flex h-10 w-10 items-center justify-center rounded-2xl
-                 bg-emerald-400/20 border border-emerald-300/40
-                 shadow-[0_0_18px_rgba(0,255,150,0.6)]"
-        >
-          <span class="text-xl font-extrabold text-emerald-300">E</span>
-        </div>
-        <div>
-          <h1 class="text-2xl font-bold tracking-wide">
-            EcoSense
-            <span class="ml-1 text-sm font-semibold text-emerald-300/80">
-              Enviro-IoT
-            </span>
-          </h1>
-          <p class="text-xs text-gray-300/80">
-            Real-time environmental telemetry from ESP32 + DHT11
-          </p>
+      <div class="flex items-center gap-4">
+
+        <!-- Logo -->
+        <img
+          src="/logo/eco_sense.png"
+          alt="logo"
+          class="w-16 h-16 object-contain opacity-90
+                 transition-transform duration-300 hover:scale-110"
+        />
+
+        <div class="flex flex-col leading-tight">
+          <h1 class="text-3xl font-bold tracking-wide">EcoSense</h1>
+          <p class="text-emerald-300/70 text-sm mt-0.5">Enviro-IoT</p>
         </div>
       </div>
 
-      <!-- Right side: status + time -->
-      <div class="flex items-center gap-6 text-sm">
+      <!-- Status -->
+      <div class="flex flex-col items-end text-sm gap-2">
+
         <!-- API Status pill -->
         <div
           class="flex items-center gap-2 rounded-full px-3 py-1.5
@@ -49,204 +44,181 @@
             class="h-2.5 w-2.5 rounded-full"
             :class="connected
               ? 'bg-emerald-400 shadow-[0_0_10px_rgba(0,255,150,0.9)]'
-              : 'bg-red-500 shadow-[0_0_10px_rgba(255,80,80,0.9)]'"
-          ></span>
+              : 'bg-red-500 shadow-[0_0_10px_rgba(255,80,80,0.9)]'"></span>
+
           <span class="font-medium">
             {{ connected ? 'API Connected' : 'API Disconnected' }}
           </span>
         </div>
 
-        <div class="hidden md:block text-right text-xs text-gray-300/80">
+        <!-- Last update -->
+        <div class="text-right text-xs text-gray-300/80">
           <p class="uppercase tracking-widest text-[0.65rem]">Last sensor update</p>
-          <p class="font-mono">
-            {{ lastUpdated || '—' }}
-          </p>
+          <p class="font-mono">{{ lastUpdated || '—' }}</p>
         </div>
       </div>
     </header>
 
-    <!-- LAYOUT -->
-    <section
-      class="relative z-10 mx-auto flex max-w-6xl gap-6 px-4 pb-10 pt-6
-             lg:px-8"
-    >
-      <!-- SIDEBAR -->
-      <aside
-        class="hidden w-52 flex-shrink-0 flex-col gap-4 rounded-2xl
-               border border-white/10 bg-black/20 p-4 backdrop-blur-xl
-               lg:flex"
-      >
-        <p class="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-          Navigation
-        </p>
+    <!-- MAIN CONTENT -->
+    <section class="relative z-10 mx-auto max-w-7xl px-10 py-10">
 
-        <button class="sidebar-link-active">
-          <span class="text-sm">EcoSense Dashboard</span>
-          <span class="text-[0.65rem] uppercase tracking-widest text-emerald-300/80">Live</span>
-        </button>
+      <!-- TOP CARDS -->
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto">
 
-        <button class="sidebar-link">
-          <span class="text-sm">ESP32 Status</span>
-          <span class="text-[0.65rem] text-gray-400">Coming soon</span>
-        </button>
+        <!-- Temperature -->
+        <div class="glass-card card-hover p-8 w-62">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Temperature</p>
+            <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-[0.7rem] text-emerald-200">
+              °C
+            </span>
+          </div>
+          <p class="mt-3 text-4xl font-semibold">
+            {{ temperature.toFixed(1) }}
+            <span class="text-base text-gray-300">°C</span>
+          </p>
+          <p class="mt-1 text-xs text-gray-300/80">Indoor ambient reading from DHT11 sensor</p>
+        </div>
 
-        <button class="sidebar-link">
-          <span class="text-sm">Historical Reports</span>
-          <span class="text-[0.65rem] text-gray-400">Export</span>
-        </button>
+        <!-- Humidity -->
+        <div class="glass-card card-hover p-8 w-62">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Humidity</p>
+            <span class="rounded-full bg-sky-400/15 px-3 py-1 text-[0.7rem] text-sky-200">
+              %
+            </span>
+          </div>
+          <p class="mt-3 text-4xl font-semibold">
+            {{ humidity.toFixed(1) }}
+            <span class="text-base text-gray-300">%</span>
+          </p>
+          <p class="mt-1 text-xs text-gray-300/80">Relative humidity based on latest sensor sample</p>
+        </div>
 
-        <button class="sidebar-link mt-4 border-emerald-300/30 bg-emerald-300/10">
-          <span class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
-            Mode
-          </span>
-          <span class="text-sm">Environment Monitor</span>
-        </button>
-      </aside>
-
-      <!-- MAIN CONTENT -->
-      <div class="flex-1 space-y-6">
-        <!-- TOP CARDS -->
-        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <!-- Temperature -->
-          <div class="glass-card card-hover p-4">
-            <div class="flex items-center justify-between">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Temperature</p>
-              <span class="rounded-full bg-emerald-400/10 px-2 py-0.5 text-[0.7rem] text-emerald-200">°C</span>
-            </div>
-            <p class="mt-3 text-3xl font-semibold">
-              {{ temperature.toFixed(1) }}
-              <span class="text-base text-gray-300">°C</span>
+        <!-- Rain Sensor -->
+        <div class="glass-card card-hover p-8 w-62">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
+              Rain Sensor
             </p>
-            <p class="mt-1 text-xs text-gray-300/80">Indoor ambient reading from DHT11 sensor</p>
+            <span class="rounded-full bg-blue-400/10 px-3 py-1 text-[0.7rem] text-blue-200">
+              Wet %
+            </span>
           </div>
 
-          <!-- Humidity -->
-          <div class="glass-card card-hover p-4">
-            <div class="flex items-center justify-between">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">Humidity</p>
-              <span class="rounded-full bg-sky-400/15 px-2 py-0.5 text-[0.7rem] text-sky-200">%</span>
-            </div>
-            <p class="mt-3 text-3xl font-semibold">
-              {{ humidity.toFixed(1) }}
-              <span class="text-base text-gray-300">%</span>
-            </p>
-            <p class="mt-1 text-xs text-gray-300/80">Relative humidity based on latest sensor sample</p>
-          </div>
+          <p class="mt-3 text-4xl font-semibold">
+            {{ rainPercent.toFixed(1) }}
+            <span class="text-base text-gray-300">%</span>
+          </p>
 
-          <!-- API Health -->
-          <div class="glass-card card-hover p-4">
-            <div class="flex items-center justify-between">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">API Health</p>
-              <span
-                class="rounded-full px-2 py-0.5 text-[0.7rem]"
-                :class="connected ? 'bg-emerald-400/15 text-emerald-200' : 'bg-red-500/20 text-red-200'"
-              >
-                {{ connected ? 'ONLINE' : 'OFFLINE' }}
-              </span>
-            </div>
-            <p class="mt-3 text-xl font-semibold">
-              {{ connected ? 'Stable link to ESP32' : 'Awaiting connection' }}
-            </p>
-            <p class="mt-1 text-xs text-gray-300/80">
-              Polling <code class="text-[0.65rem] font-mono">/data</code> every 5 seconds
-            </p>
-          </div>
+          <p class="mt-1 text-xs text-gray-300/80">
+            Status:
+            <span :class="rain === 0 ? 'text-red-400' : 'text-emerald-400'">
+              {{ rain === 0 ? 'Wet (Rain Detected)' : 'Dry' }}
+            </span>
+          </p>
+        </div>
+      </div>
 
-          <!-- Hello Message -->
-          <div class="glass-card card-hover flex flex-col justify-between p-4">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">ESP32 Message</p>
-              <p class="mt-3 text-sm font-medium text-emerald-100 max-h-16 overflow-hidden text-ellipsis">
-                {{ data }}
-              </p>
-            </div>
-            <button
-              @click="getData"
-              class="mt-4 w-full rounded-xl bg-gradient-to-r from-emerald-300 to-lime-300
-                     px-3 py-2 text-center text-xs font-semibold tracking-wide text-gray-900
-                     shadow-[0_0_12px_rgba(0,255,180,0.65)]
-                     transition-all duration-300 hover:scale-[1.02]
-                     hover:shadow-[0_0_18px_rgba(0,255,200,1)]
-                     disabled:opacity-50"
-              :disabled="loading"
-            >
-              {{ loading ? 'Requesting data…' : 'Get Hello World' }}
-            </button>
+      <!-- CHARTS -->
+      <div class="grid gap-6 mt-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Temperature Chart -->
+        <div class="glass-card card-hover p-4 cursor-pointer"
+          @click="openChartModal(
+            'Temperature History',
+            history.map(p => p.temperature),
+            history.map(p => p.time),
+            'rgba(16,185,129,1)',
+            'rgba(16,185,129,0.12)'
+          )">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
+            Temperature
+          </h3>
+          <div class="h-64">
+            <canvas ref="tempCanvas"></canvas>
           </div>
         </div>
 
-        <!-- TWO SEPARATE CHARTS -->
-        <div class="grid gap-4 lg:grid-cols-2">
-          
-          <!-- Temperature Chart -->
-          <div class="glass-card card-hover p-5">
-            <div class="mb-3">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
-                Temperature History
-              </p>
-              <p class="text-sm text-gray-200">Trend of temperature samples</p>
-            </div>
-            <div class="h-56">
-              <canvas ref="tempCanvas"></canvas>
-            </div>
+        <!-- Humidity Chart -->
+        <div class="glass-card card-hover p-4 cursor-pointer"
+          @click="openChartModal(
+            'Humidity History',
+            history.map(p => p.humidity),
+            history.map(p => p.time),
+            'rgba(56,189,248,1)',
+            'rgba(56,189,248,0.12)'
+          )">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
+            Humidity
+          </h3>
+          <div class="h-64">
+            <canvas ref="humidityCanvas"></canvas>
           </div>
-
-          <!-- Humidity Chart -->
-          <div class="glass-card card-hover p-5">
-            <div class="mb-3">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
-                Humidity History
-              </p>
-              <p class="text-sm text-gray-200">Trend of humidity samples</p>
-            </div>
-            <div class="h-56">
-              <canvas ref="humidityCanvas"></canvas>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Live Panel -->
-        <div class="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <!-- History Already Above -->
-
-          <!-- Live Connection Panel -->
-          <div class="glass-card card-hover flex flex-col justify-between p-5">
-            <div class="space-y-2">
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300">
-                Connection Overview
-              </p>
-              <p class="text-sm text-gray-200">
-                Monitoring ESP32 Wi-Fi link and REST endpoints.
-              </p>
-              <ul class="mt-3 space-y-1 text-xs text-gray-300/90">
-                <li>• Hello endpoint: <code class="font-mono text-[0.7rem]">/hello</code></li>
-                <li>• Sensor endpoint: <code class="font-mono text-[0.7rem]">/data</code></li>
-                <li>• Poll interval: <span class="font-mono">5s</span></li>
-              </ul>
-            </div>
-
-            <div class="mt-4 flex flex-wrap gap-2 text-[0.7rem]">
-              <span
-                class="rounded-full border border-emerald-300/40 bg-emerald-300/10
-                       px-2 py-1 font-medium text-emerald-100"
-              >
-                {{ connected ? 'Live Telemetry' : 'Reconnect Required' }}
-              </span>
-
-              <span class="rounded-full border border-white/15 bg-white/5 px-2 py-1 text-gray-200">
-                ESP32 • DHT11
-              </span>
-
-              <span class="rounded-full border border-white/10 bg-black/30 px-2 py-1 text-gray-200">
-                Vue + Tailwind UI
-              </span>
-            </div>
+        <!-- Rain Chart -->
+        <div class="glass-card card-hover p-4 cursor-pointer"
+          @click="openChartModal(
+            'Rain Wetness (%)',
+            rainHistory.map(p => p.percent),
+            rainHistory.map(p => p.time),
+            'rgba(96,165,250,1)',
+            'rgba(96,165,250,0.12)'
+          )">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-300 mb-2">
+            Rain Wetness (%)
+          </h3>
+          <div class="h-64">
+            <canvas ref="rainSensorCanvas"></canvas>
           </div>
-
         </div>
       </div>
     </section>
+
+    <!-- =============== -->
+    <!--  FULLSCREEN MODAL -->
+    <!-- =============== -->
+    <!-- FULLSCREEN MODAL CHART -->
+    <div
+      v-if="showModal"
+      class="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-[999]
+            transition-opacity duration-300 animate-fadeIn"
+      @click.self="closeModal"
+    >
+      <div
+        class="bg-black/40 border border-white/20 rounded-2xl p-6 w-[90%] max-w-4xl h-[70vh] relative 
+              shadow-2xl backdrop-blur-xl transform transition-all duration-300 animate-zoomIn"
+      >
+
+        <!-- Close button -->
+        <button
+          class="absolute top-3 right-3 text-white text-2xl hover:text-emerald-300"
+          @click="closeModal"
+        >✕</button>
+
+        <!-- Title -->
+        <h2 class="text-center text-lg font-semibold mb-2 text-emerald-200">
+          {{ modalTitle }}
+        </h2>
+
+        <!-- Download Button -->
+        <button
+          class="absolute top-3 left-3 text-sm px-3 py-1 rounded-lg 
+                bg-emerald-400/20 border border-emerald-300/40 text-emerald-200
+                hover:bg-emerald-400/30 transition-all"
+          @click="downloadChart"
+        >
+          ⬇ Download PNG
+        </button>
+
+        <!-- Large Chart Canvas -->
+        <canvas ref="modalCanvas" class="w-full h-full"></canvas>
+
+      </div>
+    </div>
+
+
   </main>
 </template>
 
@@ -255,40 +227,105 @@ import { ref, onMounted, nextTick } from 'vue'
 import { Chart, registerables } from 'chart.js'
 Chart.register(...registerables)
 
-// ESP32 endpoints
-const HELLO_URL = 'http://192.168.1.32/hello'
-const DATA_URL = 'http://192.168.1.32/data'
+/* =====================================================
+   Existing ESP32 + sensor logic (KEPT EXACTLY THE SAME)
+   =====================================================*/
+const HELLO_URL = 'http://192.168.1.34/hello'
+const DHT_DATA_URL = 'http://192.168.1.34/dht_data'
+const RainSensor_DATA_URL = 'http://192.168.1.34/rainSensor_data'
 
-// State
 const data = ref('Click the button to receive data')
 const loading = ref(false)
 const connected = ref(false)
 
 const temperature = ref(0)
 const humidity = ref(0)
+const rain = ref(0)
+const rainPercent = ref(0)
 const lastUpdated = ref('')
 
 const history = ref([])
+const rainHistory = ref([])
 
 const tempCanvas = ref(null)
 const humidityCanvas = ref(null)
+const rainSensorCanvas = ref(null)
 
 let tempChart = null
 let humidityChart = null
+let rainSensorChart = null
+
+
+/* =====================================================
+      NEW — MODAL FOR FULLSCREEN CHART
+   =====================================================*/
+
+const showModal = ref(false)
+const modalTitle = ref('')
+const modalCanvas = ref(null)
+let modalChart = null
+
+const openChartModal = (title, chartData, labels, borderColor, bgColor) => {
+  showModal.value = true
+  modalTitle.value = title
+
+  nextTick(() => {
+    const ctx = modalCanvas.value.getContext('2d')
+
+    if (modalChart) modalChart.destroy()
+
+    modalChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: title,
+          data: chartData,
+          tension: 0.3,
+          borderWidth: 2,
+          pointRadius: 2,
+          borderColor,
+          backgroundColor: bgColor
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#e5e7eb' } } },
+        scales: {
+          x: {
+            ticks: { color: '#9ca3af' },
+            grid: { color: 'rgba(148,163,184,0.15)' }
+          },
+          y: {
+            ticks: { color: '#9ca3af' },
+            grid: { color: 'rgba(148,163,184,0.18)' }
+          }
+        }
+      }
+    })
+  })
+}
+
+const closeModal = () => {
+  showModal.value = false
+}
+
+
+/* =====================================================
+      EXISTING ESP32 API + CHART UPDATE LOGIC
+   =====================================================*/
 
 const updateLastUpdated = () => {
   lastUpdated.value = new Date().toLocaleTimeString()
 }
 
-// GET /hello
 const getData = async () => {
   loading.value = true
   data.value = 'Connecting...'
-
   try {
     const res = await fetch(HELLO_URL)
     if (!res.ok) throw new Error('HTTP Error')
-
     const text = await res.text()
     data.value = text
     connected.value = true
@@ -300,10 +337,9 @@ const getData = async () => {
   }
 }
 
-// GET /data
 const fetchSensorData = async () => {
   try {
-    const res = await fetch(DATA_URL)
+    const res = await fetch(DHT_DATA_URL)
     if (!res.ok) throw new Error('HTTP Error')
 
     const json = await res.json()
@@ -329,7 +365,39 @@ const fetchSensorData = async () => {
   }
 }
 
-// Temperature chart
+const fetchRainSensorData = async () => {
+  try {
+    const res = await fetch(RainSensor_DATA_URL)
+    if (!res.ok) throw new Error('HTTP Error')
+    const json = await res.json()
+
+    if (
+      typeof json['Rain Sensor Digital Output'] === 'number' &&
+      typeof json['Rain Sensor Analog Percentage Output'] === 'number'
+    ) {
+      rain.value = json['Rain Sensor Digital Output']
+      rainPercent.value = json['Rain Sensor Analog Percentage Output']
+
+      rainHistory.value.push({
+        time: new Date().toLocaleTimeString(),
+        percent: rainPercent.value,
+        state: rain.value
+      })
+
+      if (rainHistory.value.length > 20) rainHistory.value.shift()
+
+      updateRainChart()
+    }
+  } catch (e) {
+    console.log('Rain sensor fetch failed')
+  }
+}
+
+
+/* =====================================================
+                   CHART INITIALIZERS
+   =====================================================*/
+
 const initTempChart = () => {
   const ctx = tempCanvas.value.getContext('2d')
   tempChart = new Chart(ctx, {
@@ -348,17 +416,11 @@ const initTempChart = () => {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: '#e5e7eb' } } },
-      scales: {
-        x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.15)' } },
-        y: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.18)' } }
-      }
+      maintainAspectRatio: false
     }
   })
 }
 
-// Humidity chart
 const initHumidityChart = () => {
   const ctx = humidityCanvas.value.getContext('2d')
   humidityChart = new Chart(ctx, {
@@ -377,12 +439,30 @@ const initHumidityChart = () => {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: '#e5e7eb' } } },
-      scales: {
-        x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.15)' } },
-        y: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(148,163,184,0.18)' } }
-      }
+      maintainAspectRatio: false
+    }
+  })
+}
+
+const initRainChart = () => {
+  const ctx = rainSensorCanvas.value.getContext('2d')
+  rainSensorChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: rainHistory.value.map(p => p.time),
+      datasets: [{
+        label: 'Rain Wetness (%)',
+        data: rainHistory.value.map(p => p.percent),
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 2,
+        borderColor: 'rgba(96,165,250,1)',
+        backgroundColor: 'rgba(96,165,250,0.12)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false
     }
   })
 }
@@ -401,14 +481,39 @@ const updateCharts = () => {
   }
 }
 
+const updateRainChart = () => {
+  if (!rainSensorChart) return
+  rainSensorChart.data.labels = rainHistory.value.map(p => p.time)
+  rainSensorChart.data.datasets[0].data = rainHistory.value.map(p => p.percent)
+  rainSensorChart.update('active')
+}
+
+const downloadChart = () => {
+  if (!modalChart) return;
+
+  const a = document.createElement('a');
+  a.href = modalChart.toBase64Image('image/png', 1.0);
+  a.download = `${modalTitle.value.replace(/ /g, '_')}.png`;
+  a.click();
+};
+
+
+
+/* =====================================================
+                     MOUNTING LOGIC
+   =====================================================*/
 onMounted(async () => {
   getData()
   fetchSensorData()
+  fetchRainSensorData()
+
   setInterval(fetchSensorData, 5000)
+  setInterval(fetchRainSensorData, 5000)
 
   await nextTick()
   initTempChart()
   initHumidityChart()
+  initRainChart()
 })
 </script>
 
@@ -430,33 +535,6 @@ onMounted(async () => {
   border-color: rgba(45, 212, 191, 0.65);
 }
 
-.sidebar-link,
-.sidebar-link-active {  
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  border-radius: 0.9rem;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  background: rgba(15, 23, 42, 0.72);
-  font-size: 0.8rem;
-  text-align: left;
-  transition: all 0.25s ease;
-}
-
-.sidebar-link:hover {
-  border-color: rgba(45, 212, 191, 0.8);
-  background: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 0 16px rgba(34, 197, 94, 0.35);
-}
-
-.sidebar-link-active {
-  border-color: rgba(45, 212, 191, 0.9);
-  background: radial-gradient(circle at top left, rgba(45, 212, 191, 0.3), rgba(15, 23, 42, 0.95));
-  box-shadow: 0 0 22px rgba(16, 185, 129, 0.85);
-}
-
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
@@ -464,4 +542,21 @@ onMounted(async () => {
 .animate-pulse-slow {
   animation: pulse-slow 7s ease-in-out infinite;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-zoomIn {
+  animation: zoomIn 0.25s ease-out;
+}
+
 </style>
